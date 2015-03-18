@@ -11,7 +11,7 @@ describe 'Sealions Controller' do
   it 'Should process the \'post/sea_post\' route' do
     post '/sea_post'
     expect(last_response).to be_redirect
-    follow redirect!
+    follow_redirect!
     expect(last_response.status).to eq(200)
     expect(last_response.body).to include('Welcome to the Sealions page!')
   end
