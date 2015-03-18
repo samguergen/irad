@@ -12,4 +12,6 @@ put '/sea_update' do
   redirect '/sealions'
 end
 
-
+delete '/sea_delete' do
+  redirect '/sealions'
+end
