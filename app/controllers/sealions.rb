@@ -8,3 +8,7 @@ post '/sea_post' do
   redirect '/sealions'
 end
 
+put '/sea_update' do
+  redirect '/sealions'
+end
+
