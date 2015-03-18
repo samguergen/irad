@@ -23,4 +23,12 @@ describe 'Sealions Controller' do
     expect(last_response).to be_ok
     expect(last_response.body).to include('Welcome to the Sealions page!')
   end
+
+  it 'Should process the delete/sea_delete route' do
+    delete '/sea_delete'
+    expect(last_response).to be_redirect
+    follow_redirect!
+    expect(last_response).to be_ok
+    expect(last_response.body).to include('Welcome to the Sealions page!')
+  end
 end
