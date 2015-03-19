@@ -9,8 +9,11 @@ require 'uri'
 require 'pathname'
 
 
- APP_ROOT = Pathname.new(File.expand_path('../', __FILE__))
- APP_NAME = APP_ROOT.basename.to_s
+APP_ROOT = Pathname.new(File.expand_path('../', __FILE__))
+APP_NAME = APP_ROOT.basename.to_s
 
  #Load Controllers
- Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
+Dir[APP_ROOT.join('app', 'models', '*.rb')].each { |file| require file }
+Dir[APP_ROOT.join('app', 'controllers', '*.rb')].each { |file| require file }
+
+require APP_ROOT.join('database')

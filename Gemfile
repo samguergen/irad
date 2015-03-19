@@ -10,3 +10,8 @@ end
 group :development do
     gem 'shotgun'
 end
+
+gem 'pg'
+gem 'activesupport'
+gem 'activerecord'
+gem 'rake'
