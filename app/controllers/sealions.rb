@@ -33,6 +33,26 @@ post '/sealions' do
   end
 end
 
+put '/sealions/:id' do
+  cur_lion = Sealion.find_by(id: params[:id])
+
+  if cur_lion
+    cur_lion.name = params[:name]
+    cur_lion.age = params[:age]
+    cur_lion.quirk = params[:quirk]
+
+    if cur_lion.save
+      redirect "/sealions/#{cur_lion.id}"
+    else
+      [500, 'something went wrong']
+    end
+
+  else
+    [404, "no sealion found"]
+  end
+
+end
+
 
 delete '/sea_delete' do
   redirect '/sealions'
