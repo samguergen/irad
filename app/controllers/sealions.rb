@@ -1,5 +1,9 @@
 require 'sinatra'
 
+get '/sealions/new' do
+  erb :new
+end
+
 get '/sealions' do
   erb :index, locals: {sealions: Sealion.all}
 
@@ -14,9 +18,13 @@ get '/sealions/:id' do
   end
 end
 
-
-post '/sea_post' do
-  redirect '/sealions'
+post '/sealions' do
+  new_lion = Sealion.create(name: params[:name], age: params[:age], quirk: params[:quirk])
+  if new_lion.save
+    redirect "sealions/#{new_lion.id}"
+  else
+    [500, "Something went wrong. Sorry!"]
+  end
 end
 
 put '/sea_update' do
