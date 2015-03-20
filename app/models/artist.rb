@@ -1,3 +1,6 @@
         class Artist < ActiveRecord::Base
-          # Remember to create a migration!
+          has_many :artist_genres
+          has_many :genres, through :artist_genres
+          has_many :albums
+          belongs_to :record_label
         end
