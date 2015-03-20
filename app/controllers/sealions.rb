@@ -1,8 +1,19 @@
 require 'sinatra'
 
 get '/sealions' do
-  'Welcome to the Sealions page!'
+  erb :index, locals: {sealions: Sealion.all}
+
 end
+
+get '/sealions/:id' do
+  lion = Sealion.find_by_id(params[:id])
+  if lion
+    erb :show, locals: {cur_lion: lion}
+  else
+    [500, "Something went wrong. Sorry!"]
+  end
+end
+
 
 post '/sea_post' do
   redirect '/sealions'
