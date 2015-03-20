@@ -1,5 +1,9 @@
 require 'sinatra'
 
+put '/sealions/:id/update' do
+  redirect '/sealions'
+end
+
 get '/sealions/new' do
   erb :new
 end
@@ -27,9 +31,6 @@ post '/sealions' do
   end
 end
 
-put '/sea_update' do
-  redirect '/sealions'
-end
 
 delete '/sea_delete' do
   redirect '/sealions'
