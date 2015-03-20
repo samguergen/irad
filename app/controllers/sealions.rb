@@ -1,12 +1,14 @@
 require 'sinatra'
 
-put '/sealions/:id/update' do
-  redirect '/sealions'
-end
-
 get '/sealions/new' do
   erb :new
 end
+
+get '/sealions/:id/edit' do
+  lion_to_update = Sealion.find_by_id(params[:id])
+  erb :edit, locals: {lion: lion_to_update}
+end
+
 
 get '/sealions' do
   erb :index, locals: {sealions: Sealion.all}
