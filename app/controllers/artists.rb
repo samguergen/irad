@@ -21,6 +21,7 @@ end
 
 put '/artists/:id' do
   label = RecordLabel.find_or_create_by(:name => params[:record_label].strip)
+  genre = Genre.find_or_create_by(:name => params[:genre].strip)
 
   @artist_to_update = Artist.find_by(:id => params[:id])
   if @artist_to_update
@@ -29,6 +30,7 @@ put '/artists/:id' do
     @artist_to_update.age = params[:age]
     @artist_to_update.description = params[:description]
     @artist_to_update.record_label_id = label.id
+    @artist_to_update.genres << genre
     if @artist_to_update.save
       redirect "/artists/#{params[:id]}"
     else

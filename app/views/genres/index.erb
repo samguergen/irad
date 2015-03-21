@@ -1,0 +1,16 @@
+center>
+
+
+
+<form action='/artists/<%= @artist_to_edit.id %>' method='post'>
+<input type='hidden' name='_method' value='put'/>
+
+ <%   @artist_to_edit.genres.each do |n| %>
+  <input type='text' placeholder='genre' name='genre' value='<%= n.name %>'/>
+<% end %>
+  <input type='submit' value='Edit!'>
+</form>
+
+
+
+</center>
