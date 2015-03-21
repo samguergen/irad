@@ -57,3 +57,11 @@ post '/artists' do
 
 end
 
+
+delete '/artists/:id/delete' do
+  @artist_to_delete = Artist.find_by(:id => params[:id])
+  @artist_to_delete.destroy
+
+  redirect '/artists'
+end
+
