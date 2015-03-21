@@ -1,5 +1,5 @@
 <ul>
   <% all_artists.each do |artist| %>
-  <li><%= artist.moniker %></li>
+  <li><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
   <% end %>
 </ul>
