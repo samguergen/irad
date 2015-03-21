@@ -1,8 +1,8 @@
 <center>
-<ul>
+<h1> All artists </h1>
   <% @all_artists.each do |artist| %>
-  <li><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+ <p><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></p>
   <% end %>
-</ul>
+
 <p><a href='/artists/new'>Add a new artist!</a></p>
 </center>
