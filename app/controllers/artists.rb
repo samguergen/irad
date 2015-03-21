@@ -28,23 +28,6 @@ post '/artists' do
                           :record_label_id => label.id
                           )
 
-  # if RecordLabel.find_by(name: label)
-  #   valid_label = Label.find_by(name: label)
-  #   new_artist.record_label_id = valid_label.id
-  # else
-  #   [500,"that record label is not in the database"]
-  #   # eventually this should reroute to a 'create new label' page
-  # end
-
-  # if Genre.find_by(name: genre)
-  #   valid_genre = Genre.find_by(name: genre)
-  #   new_artist << valid_genre
-  # else
-  #   [404,"that genre is not in the database"]
-  #   # this should reroute to a 'create new genre' page
-  # end
-
-
   if @new_artist.save
     redirect "/artists/#{@new_artist.id}"
   else
