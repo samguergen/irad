@@ -10,7 +10,7 @@ get '/artists/new' do
 end
 
 get '/artists/:id' do
- @the_artist = params[:id]
+ @the_artist = Artist.find_by(:id => params[:id])
  erb :'artists/show'
 end
 
