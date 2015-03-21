@@ -9,15 +9,36 @@ get '/artists/new' do
   erb :'artists/new'
 end
 
+get '/artists/:id/edit' do
+  @artist_to_edit = Artist.find_by(:id => params[:id])
+  erb :'artists/edit'
+end
+
 get '/artists/:id' do
  @the_artist = Artist.find_by(:id => params[:id])
  erb :'artists/show'
 end
 
+put '/artists/:id' do
+  @artist_to_update = Artist.find_by(:id => params[:id])
+  if @artist_to_update
+    @artist_to_update.moniker = params[:moniker]
+    @artist_to_update.birth_name = params[:birth_name]
+    @artist_to_update.age = params[:age]
+    if @artist_to_update.save
+      redirect "/artists/#{@artist_to_update.id}"
+    else
+      [500, "Something went wrong!"]
+    end
+  else
+    [404, "That artist does not exist"]
+  end
+end
+
 post '/artists' do
 
-  label = RecordLabel.find_or_create_by(name: params[:record_label].strip)
-  genre = Genre.find_or_create_by(name: params[:genre].strip)
+  label = RecordLabel.find_or_create_by(:name => params[:record_label].strip)
+  genre = Genre.find_or_create_by(:name => params[:genre].strip)
 
   @new_artist = Artist.new(
                           :moniker => params[:moniker],
