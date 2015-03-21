@@ -26,7 +26,7 @@ put '/artists/:id' do
     @artist_to_update.birth_name = params[:birth_name]
     @artist_to_update.age = params[:age]
     if @artist_to_update.save
-      redirect "/artists/#{@artist_to_update.id}"
+      redirect "/artists/#{params[:id]}"
     else
       [500, "Something went wrong!"]
     end
