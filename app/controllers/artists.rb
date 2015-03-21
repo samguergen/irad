@@ -17,24 +17,14 @@ end
 post '/artists' do
 
   label = RecordLabel.find_or_create_by(name: params[:record_label].strip)
-  # genre = params[:genre].strip.downcase if params[:genre]
-
-  # new_artist = Artist.create(
-  #                         moniker: params[:moniker],
-  #                         birth_name:params[:birth_name],
-  #                         age: params[:age],
-  #                         description: params[:description],
-  #                         genre: params[:genre]
-  #                         )
-
-
+  genre = Genre.find_or_create_by(name: params[:genre].strip)
 
   @new_artist = Artist.new(
                           :moniker => params[:moniker],
                           :birth_name => params[:birth_name],
                           :age => params[:age],
                           :description => params[:description],
-                          :genres => [Genre.find_or_create_by(:name => params[:genre])],
+                          :genres => [genre],
                           :record_label_id => label.id
                           )
 
