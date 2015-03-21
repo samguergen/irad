@@ -20,11 +20,15 @@ get '/artists/:id' do
 end
 
 put '/artists/:id' do
+  label = RecordLabel.find_or_create_by(:name => params[:record_label].strip)
+
   @artist_to_update = Artist.find_by(:id => params[:id])
   if @artist_to_update
     @artist_to_update.moniker = params[:moniker]
     @artist_to_update.birth_name = params[:birth_name]
     @artist_to_update.age = params[:age]
+    @artist_to_update.description = params[:description]
+    @artist_to_update.record_label_id = label.id
     if @artist_to_update.save
       redirect "/artists/#{params[:id]}"
     else
