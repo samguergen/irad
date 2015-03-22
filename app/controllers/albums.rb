@@ -1,5 +1,3 @@
-require 'sinatra'
-require 'rubygems'
 
  get '/artists/:id/albums' do
  	@artist_to_edit = Artist.find_by(:id => params[:id])
@@ -9,7 +7,7 @@ require 'rubygems'
 
 
  get '/artists/:id/albums/new' do
- 	@album_artist = Artist.find_by(:id => params[:id])
+ 	@the_artist = Artist.find_by(:id => params[:id])
  	erb :'albums/new'
  end
 
@@ -18,7 +16,7 @@ get '/artists/:id/albums/:id/edit' do
 	erb :'albums/edit'
 end
 
-put '/artist/:id/albums/:id' do
+put '/artists/:id/albums/:id' do
 
 	@album_to_update = Album.find_by(:id => params[:id])
 	if @album_to_update
@@ -35,12 +33,12 @@ put '/artist/:id/albums/:id' do
 end
 
 
- post '/artist/:id/albums' do
+post '/artists/:id/albums' do
 
- 	@album_artist = Artist.find_by(:id => params[:id])
+ 	@the_artist = Artist.find_by(:id => params[:id])
  	
  	@new_album = Album.new(
- 							:artist_id => @album_artist.id,
+ 							:artist_id => @the_artist.id,
  							:title => params[:title],
  							:release_date => params[:release_date]
  	)
@@ -49,9 +47,9 @@ end
 	else
 		[500, "Something went wrong!"]
 	end	
-  end
+end
 
-  delete '/artists/:id/albums/delete' do
+delete '/artists/:id/albums/delete' do
   	@album_to_delete = Album.find_by(:id => params[:id])
 	@album_to_delete.destroy
 

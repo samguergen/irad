@@ -17,15 +17,15 @@
 	<form action='/artists/<%= @artist_to_edit.id %>' method='post'>
 			<input type='hidden' name='_method' value='put'/>
 		<h3>Stage Name</h3>
-			<input type='text' placeholder='stage name' name='moniker' value='<%= @artist_to_edit.moniker %>'/>
+			<input class="edit_option"  type='text' placeholder='stage name' name='moniker' value='<%= @artist_to_edit.moniker %>'/>
 		<h3>Birth Name</h3>
-			<input type='text' placeholder='birth name' name='birth_name' value='<%= @artist_to_edit.birth_name %>'/>
+			<input class="edit_option" type='text' placeholder='birth name' name='birth_name' value='<%= @artist_to_edit.birth_name %>'/>
 		<h3>Description</h3>
-			<input type='text' placeholder='description' name='description' value='<%= @artist_to_edit.description %>'/>
+			<input class="edit_option" type='text' placeholder='description' name='description' value='<%= @artist_to_edit.description %>'/>
 		<h3>Age</h3>
-			<input type='text' placeholder='age' name='age' value='<%= @artist_to_edit.age %>'/>
+			<input class="edit_option" type='text' placeholder='age' name='age' value='<%= @artist_to_edit.age %>'/>
 		<h3>Record Label</h3>
-			<input type='text' placeholder='record label' name='record_label' value='<%= @artist_to_edit.record_label.name %>'/>
-			<input id="create" type='submit' value='Edit!'>
+			<input class="edit_option" type='text' placeholder='record label' name='record_label' value='<%= @artist_to_edit.record_label.name %>'/>
+			<input class = "button" id="create" type='submit' value='Edit'>
 </form>
 </section>

@@ -197,15 +197,29 @@ h3 {
 	font-size: 1.2em;
 }
 
-input {
+.edit_option {
+	font-family: lato;
+	border-color: white;
+	border-style: solid;
+	font-size: .8em;
+}
+
+.button {
 	font-size: 1em;
 	margin-top: .3em;
-	font-family: lato;
+	font-family: Ubuntu;
+	color: white;
+	background-color: black;
+	border: black;
+}
+
+.button:hover {
+	color: yellow;
 }
 
 #create {
 	size: 10em;
-	margin-left: 3.3em;
+	margin-left: 2.75em;
 	margin-top: 1.3em;
 }
 

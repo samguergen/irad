@@ -42,7 +42,7 @@
 <p><a id="new_artist" href='/artists/<%=@the_artist.id%>/edit'>Edit Artist </a></p>
 <form action='/artists/<%=@the_artist.id%>/delete' method='post'>
   <input type='hidden' name='_method' value='delete'/>
-  <input type='Submit' value='Delete'/>
+  <input class ="button" type='Submit' value='Delete' />
 
 
 <div id="album_section">
@@ -51,7 +51,7 @@
 
 <img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/6/63/Total_Loss_cover_art.jpg" alt="Total Loss" style="width:25em;height:25em">
 	<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/7/75/How_To_Dress_Well_-_What_Is_This_Heart.jpg" alt="What is This Heart" style="width:25em;height:25em">
-	<p><a id="new_artist" href='/albums/new'>Add New Album</a></p>
+	<p><a id="new_artist" href='/artists/<%=@the_artist.id%>/albums/new'>Add New Album</a></p>
 </div>
 
 
