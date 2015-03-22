@@ -16,3 +16,9 @@ put '/artist_genres/:artist_id' do
   end
 end
 
+delete '/artist_genres/:artist_id/delete_genre_from_artist/:genre_id' do
+  @genre = Genre.find_by(:id => params[:genre_id])
+  @artist = Artist.find_by(:id => params[:artist_id])
+  @artist.genres.destroy
+end
+

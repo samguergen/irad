@@ -6,7 +6,11 @@
       No genres associated with this artist.
     <% else %>
       <% @artist_to_edit.genres.each do |genre| %>
-        <%= genre.name %>
+          <p><%= genre.name.capitalize %>
+  <form action="/artist_genres/<%= @artist_to_edit.id %>/delete_genre_from_artist/<%= genre.id %>" method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='Submit' value='Delete <%= genre.name %>!'/>
+</form>
       <% end %>
     <% end %>
   <h3>Add Genres for <%= @artist_to_edit.moniker %></h3>
