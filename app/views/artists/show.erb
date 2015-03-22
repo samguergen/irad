@@ -1,4 +1,3 @@
-Artist detail page for <%= @the_artist.moniker%>
 
 <p><%= @the_artist.age %></p>
 <p><%= @the_artist.description %></p>
@@ -8,4 +7,61 @@ Artist detail page for <%= @the_artist.moniker%>
   <input type='hidden' name='_method' value='delete'/>
   <input type='Submit' value='Delete!'/>
 
-<p><a href='/artists'>Go back to artists list</a></p>
+
+
+<body id="artist_body">
+
+<header>
+	<div class="banner">
+	</div>
+	<img id="logo2" src="irad_logo.png" style="width:3.2em;height:1.0em">
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Labels</li>
+	</ul>
+	
+</header>
+
+<div >
+	<h1 id="title"><%= @the_artist.moniker%></h1>
+	
+</div>
+
+<div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+
+<div id="artist_img">
+	<img id="profile" src="blank_avatar.png" alt="artist_avatar" style="width:32em;height:27em">
+</div>
+
+<% if false %><div class ="bio">
+	<ul>
+		<li><em>Name:</em> <%= @the_artist.name %> </li>
+		<li><em>Age:</em><%= @the_artist.age %></li>
+		<li><em>Genre:</em>  %> </li>
+		<li><em>Record Label:</em> </li>
+		<li><em>Description:</em><%= @the_artist.description %> </li>
+
+	</ul>
+</div>
+
+<p><a href='/artists/<%=@the_artist.id%>/edit'>Edit artist </a></p>
+<form action='/artists/<%=@the_artist.id%>/delete' method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='Submit' value='Delete!'/>
+
+
+
+<div id="album_section">
+	<h4>Albums</h4>
+	<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/7/7b/How_to_Dress_Well_Love_Remains.jpeg" alt="Love Remains" style="width:25em;height:25em">
+	<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/6/63/Total_Loss_cover_art.jpg" alt="Total Loss" style="width:25em;height:25em">
+	<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/7/75/How_To_Dress_Well_-_What_Is_This_Heart.jpg" alt="What is This Heart" style="width:25em;height:25em">
+	
+</div>
+
+	
+</body><% end %>

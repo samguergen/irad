@@ -1,10 +1,3 @@
-<center>
-  <% @all_artists.each do |artist| %>
- <p><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></p>
-  <% end %>
-
-<p><a href='/artists/new'>Add a new artist!</a></p>
-</center>
 
 <body>
 
@@ -14,7 +7,7 @@
 	<img id="logo2" src="irad_logo.png" style="width:3.2em;height:1.0em">
 	<ul>
 		<li>About</li>
-		<li>Artist</li>
+		<li><a href='/artists'>Artists</a></li>
 		<li>Genres</li>
 		<li>Record Label</li>
 	</ul>
@@ -30,7 +23,7 @@
 <div class ="list">
 	<ul>
 		 <% @all_artists.each do |artist| %>
- <li><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+ <li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
   <% end %>
 
 	</ul>
