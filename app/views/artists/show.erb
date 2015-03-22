@@ -3,6 +3,12 @@ Artist detail page for <%= @the_artist.moniker%>
 <p><%= @the_artist.age %></p>
 <p><%= @the_artist.description %></p>
 
+<% if @the_artist.genres.count > 0 %>
+  <% @the_artist.genres.each do |genre| %>
+    <p><%= genre.name %></p>
+  <% end %>
+<% end %>
+
 <p><a href='/artists/<%=@the_artist.id%>/edit'>Edit artist </a></p>
 <form action='/artists/<%=@the_artist.id%>/delete' method='post'>
   <input type='hidden' name='_method' value='delete'/>
