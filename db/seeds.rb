@@ -18,10 +18,32 @@
 #   RecordLabel.create!(value)
 # end
 
-# Artist.create!({:moniker => "Frank Sinatra", :birth_name => "Francis Sinatranoli", :age => 82, :description => "Ol Blue Eyes", :genres => [Genre.find_by(:name => "jazz")], :record_label_id => 1})
-Artist.create!({moniker: "Lady Gaga", birth_name: "Stefani Joanne Angelina Germanotta", age: 28, description: "flamboyant and diverse contributions to the music industry via her fashion, live performances, and music videos"})
-# Artist.create!({moniker: "Jay Z", birth_name: "Shawn Corey Carter", age:45, description: "One of the most financially successful hip-hop artists and entrepreneurs in America."})
-# Artist.create!({moniker: "Katy Perry", birth_name: "Katheryn Elizabeth Hudson", age: 30, description: "Kim Jong Un's favorite artist."})
+# Artist.create!({:moniker => "Frank Sinatra",
+#                   :birth_name => "Francis Sinatranoli",
+#                   :age => 82, :description => "Ol Blue Eyes",
+#                   :genres => [Genre.find_by(:name => "jazz")],
+#                   :record_label_id => 1})
+
+Artist.create!({:moniker => "Lady Gaga",
+                :birth_name => "Stefani Joanne Angelina Germanotta",
+                :age => 28,
+                :description => "flamboyant and diverse contributions to the music industry via her fashion, live performances, and music videos",
+                :genres => [Genre.find_or_create_by(:name => "pop")],
+                :record_label_id => 2})
+
+
+Artist.create!({:moniker => "Jay Z",
+                :birth_name => "Shawn Corey Carter",
+                :age => 45,
+                :description => "One of the most financially successful hip-hop artists and entrepreneurs in America.",:genres => [Genre.find_by(:name => "hip hop")],
+                :record_label_id => 4})
+
+Artist.create!({:moniker => "Katy Perry",
+                :birth_name => "Katheryn Elizabeth Hudson",
+                :age => 30,
+                :description => "Kim Jong Un's favorite artist.",
+                :genres => [Genre.find_by(:name => "pop")],
+                :record_label_id => 3})
 
 # albums = { album_1: {title: "Frank's Best", release_date: "1999-09-02", artist_id: 1},
 #            album_2: {title: "Fame Monster", release_date: "2009-04-12", artist_id: 2},
