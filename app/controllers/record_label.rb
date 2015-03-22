@@ -30,3 +30,12 @@ post '/record_labels' do
     [404, "This record label couldn't be created."]
   end
 end
+
+delete '/record_labels/:id/delete' do
+
+@record_to_delete = RecordLabel.find_by(:id => params[:id])
+@record_to_delete.destroy
+
+redirect '/record_labels'
+
+end
