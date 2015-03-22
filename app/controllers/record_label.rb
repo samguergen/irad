@@ -3,6 +3,10 @@ get '/record_labels' do
   erb :"record_labels/index"
 end
 
+get '/record_labels/new' do
+  erb :"record_labels/new"
+end
+
 
 get '/record_labels/:id/edit' do
   erb :"record_labels/edit"
@@ -15,10 +19,14 @@ get '/record_labels/:id' do
 end
 
 
-get '/record_labels/new' do
-  erb :"record_labels/new"
+post '/record_labels' do
+  @new_label = RecordLabel.new(:name => params[:name],
+                        :founding_date => params[:founding])
+
+
+    if @new_label.save
+    redirect "/record_labels/#{@new_label.id}"
+  else
+    [404, "This record label couldn't be created."]
+  end
 end
-
-
-# post '/record_labels' do
-# end
