@@ -19,6 +19,7 @@ get '/record_labels/:id' do
 end
 
 
+
 post '/record_labels' do
   @new_label = RecordLabel.new(:name => params[:name],
                         :founding_date => params[:founding])
