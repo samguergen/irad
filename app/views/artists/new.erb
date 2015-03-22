@@ -1,13 +1,33 @@
 
 
-<center>
-<form action='/artists' method='post'>
-  <input type='text' placeholder='new artist stage name' name='moniker'/>
-  <input type='text' placeholder='birth name' name='birth_name'/>
-  <input type-='text' placeholder='description' name='description'/>
-  <input type='text' placeholder='age' name='age'/>
-  <input type='text' placeholder='genre' name='genre'/>
-  <input type='text' placeholder='record label' name='record_label'/>
-  <input type='submit' value='Create!'>
-</form>
-</center>
+<header>
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="/irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Labels</li>
+	</ul>
+	
+</header>
+
+<section id="form">
+	<form action='/artists' method='post'>
+		<h3>Stage Name</h3>
+		  <input type='text' placeholder='new artist stage name' name='moniker'/>
+		<h3>Birth Name</h3>
+		  <input type='text' placeholder='birth name' name='birth_name'/>
+		<h3>Description</h3>
+		  <input type-='text' placeholder='description' name='description'/>
+		<h3>Age</h3>
+		  <input type='text' placeholder='age' name='age'/>
+		<h3>Genre</h3>
+		  <input type='text' placeholder='genre' name='genre'/>
+		<h3>Record Label</h3>
+		  <input type='text' placeholder='record label' name='record_label'/>
+		  
+		  <input id="create" type='submit' value='Create!'>
+	</form>
+</section>

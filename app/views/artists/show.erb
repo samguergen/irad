@@ -1,17 +1,67 @@
-Artist detail page for <%= @the_artist.moniker%>
 
-<p><%= @the_artist.age %></p>
-<p><%= @the_artist.description %></p>
+<body id="artist_body">
 
-<% if @the_artist.genres.count > 0 %>
-  <% @the_artist.genres.each do |genre| %>
-    <p><%= genre.name %></p>
-  <% end  %>
-<% end %>
+<header>
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="/irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Labels</li>
+	</ul>
 
-<p><a href='/artists/<%=@the_artist.id%>/edit'>Edit artist </a></p>
+</header>
+
+<div >
+	<h1 id="title"><%= @the_artist.moniker%></h1>
+
+</div>
+
+<div class="rating">
+<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+</div>
+
+<div id="artist_img">
+	<img id="profile" src="/blank_avatar.png" alt="artist_avatar" style="width:32em;height:27em">
+</div>
+
+<div class ="bio">
+	<ul>
+		<li><em>Name:</em>   <%= @the_artist.birth_name %> </li>
+		<li><em>Age:</em>   <%= @the_artist.age %></li>
+		<li><em>Record Label:  </em> <%= @the_artist.record_label %> </li>
+    <% if @the_artist.genres.count > 0 %>
+      <% @the_artist.genres.each do |genre| %>
+        <li><em>Genre:  </em>   <%= @the_artist.genre %> </li>
+      <% end  %>
+    <% end %>
+
+
+		<li><em>Description:   </em><%= @the_artist.description %> </li>
+
+	</ul>
+</div>
+
+<p><a id="new_artist" href='/artists/<%=@the_artist.id%>/edit'>Edit Artist </a></p>
 <form action='/artists/<%=@the_artist.id%>/delete' method='post'>
   <input type='hidden' name='_method' value='delete'/>
-  <input type='Submit' value='Delete!'/>
+  <input type='Submit' value='Delete'/>
 
-<p><a href='/artists'>Go back to artists list</a></p>
+
+<div id="album_section">
+	<h4>Albums</h4>
+	<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/7/7b/How_to_Dress_Well_Love_Remains.jpeg" alt="Love Remains" style="width:25em;height:25em">
+
+<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/6/63/Total_Loss_cover_art.jpg" alt="Total Loss" style="width:25em;height:25em">
+	<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/7/75/How_To_Dress_Well_-_What_Is_This_Heart.jpg" alt="What is This Heart" style="width:25em;height:25em">
+
+</div>
+
+<span class="scroll-top-inner">
+        Top
+      </span>
+
+
+</body>

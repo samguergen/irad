@@ -1,0 +1,8 @@
+<section id="form">
+	<form action='/artists/<%= @artist_to_edit.id %>' method='post'>
+			<input type='hidden' name='_method' value='put'/>
+		<h3>Album Name</h3>
+			<input type='text' placeholder='album name' name='name' value='<%= @artist_to_edit.record_label.name %>'/>
+			<input id="create" type='submit' value='Edit!'>
+</form>
+</section>
