@@ -2,3 +2,8 @@
 <% @cur_genre.artists.each do |artist| %>
   <p><a href='/artists/<%= artist.id %>'><%= artist.moniker %></a></p>
 <% end %>
+
+<form action='/genres/<%= @cur_genre.id %>/delete' method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='Submit' value='Delete Genre!'/>
+</form>

@@ -24,3 +24,10 @@ post '/genres' do
   end
 
 end
+
+delete '/genres/:id/delete' do
+  @genre_to_delete = Genre.find_by(:id => params[:id])
+  @genre_to_delete.destroy
+
+  redirect '/genres'
+end
