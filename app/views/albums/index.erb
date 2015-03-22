@@ -1,0 +1,24 @@
+<header>
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="/irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Labels</li>
+	</ul>
+
+</header>
+
+<div>
+	<h1 id ="title"><%= @artist_to_edit.moniker %> Albums</h1>
+</div>
+
+<section>
+
+	<% @artist_to_edit.albums.each do | album | %>
+		<p><%= album.title %></p>
+	<% end %>
+
+</section>
