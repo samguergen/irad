@@ -20,6 +20,13 @@
 					<input type='text' placeholder='<%= header %>' name='<%= header %>' value='<%= attribute %>'/>
 				<% end %>
 			<% end %>
+			<h3>Record Label</h3>
+			<% if @artist_to_edit.record_label_id == nil %>
+				<input type='text' placeholder='add record label' name='record_label' />
+			<% else %>
+				<input type='text' placeholder='add record label' name='record_label' value='<%= @artist_to_edit.record_label.name %> '/>
+			<% end %>
+
 <input id="create" type='submit' value='Edit!'>
 </form>
 
