@@ -1,7 +1,7 @@
-# types = { genre_1: {name: "Jazz"},
-#            genre_2: {name: "Hip Hop"},
-#            genre_3: {name: "Rock"},
-#            genre_4: {name: "Country"}
+# types = { genre_1: {name: "jazz"},
+#            genre_2: {name: "hip hop"},
+#            genre_3: {name: "rock"},
+#            genre_4: {name: "country"}
 #          }
 
 # types.each do |key, value|
@@ -18,8 +18,8 @@
 #   RecordLabel.create!(value)
 # end
 
-# Artist.create!({moniker: "Frank Sinatra", age: 82, description: "Ol' Blue Eyes"})
-# Artist.create!({moniker: "Lady Gaga", birth_name: "Stefani Joanne Angelina Germanotta", age: 28, description: "flamboyant and diverse contributions to the music industry via her fashion, live performances, and music videos"})
+# Artist.create!({:moniker => "Frank Sinatra", :birth_name => "Francis Sinatranoli", :age => 82, :description => "Ol Blue Eyes", :genres => [Genre.find_by(:name => "jazz")], :record_label_id => 1})
+Artist.create!({moniker: "Lady Gaga", birth_name: "Stefani Joanne Angelina Germanotta", age: 28, description: "flamboyant and diverse contributions to the music industry via her fashion, live performances, and music videos"})
 # Artist.create!({moniker: "Jay Z", birth_name: "Shawn Corey Carter", age:45, description: "One of the most financially successful hip-hop artists and entrepreneurs in America."})
 # Artist.create!({moniker: "Katy Perry", birth_name: "Katheryn Elizabeth Hudson", age: 30, description: "Kim Jong Un's favorite artist."})
 
@@ -33,12 +33,12 @@
 #   Album.create!(value)
 # end
 
-Genre.create!(name: "Pop")
+# Genre.create!(name: "Pop")
 
-ArtistGenre.create!(artist_id: 1, genre_id: 1)
-ArtistGenre.create!(artist_id: 2, genre_id: 5)
-ArtistGenre.create!(artist_id: 3, genre_id: 2)
-ArtistGenre.create!(artist_id: 4, genre_id: 5)
+# ArtistGenre.create!(artist_id: 1, genre_id: 1)
+# ArtistGenre.create!(artist_id: 2, genre_id: 5)
+# ArtistGenre.create!(artist_id: 3, genre_id: 2)
+# ArtistGenre.create!(artist_id: 4, genre_id: 5)
 
 
 
