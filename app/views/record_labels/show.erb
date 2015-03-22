@@ -6,6 +6,7 @@
 <p><em>Founding date:</em>
 <br><%= @the_label.founding_date %></p>
 
+<p><a href='/record_labels/<%=@the_label.id%>/edit'>Edit!</a></p>
 <form action='/record_labels/<%=@the_label.id%>/delete' method='post'>
 <input type='hidden' name='_method' value='delete'/>
 <input type='submit' value='Delete!'/></form>
