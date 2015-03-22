@@ -33,6 +33,9 @@ put '/artists/:id' do
           # if label.name == ""
           #   label.name = "Working!"
           # end
+      # if @artist_to_update.record_label.name == ""
+      #   label.id = nil
+      # end
 
     if @artist_to_update.save
       redirect "/artists/#{params[:id]}"
