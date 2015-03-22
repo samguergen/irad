@@ -1,19 +1,20 @@
 <center>
+
   <h1>Edit Genres for <%= @artist_to_edit.moniker %></h1>
     <p>Current Genres:</p>
     <% if @artist_to_edit.genres.count == 0 %>
-      No genres associated with this artist
+      No genres associated with this artist.
     <% else %>
       <% @artist_to_edit.genres.each do |genre| %>
         <%= genre.name %>
       <% end %>
     <% end %>
-  <h3>Add Genre for <%= @artist_to_edit.moniker %></h3>
+  <h3>Add Genres for <%= @artist_to_edit.moniker %></h3>
 
 <form action='/artist_genres/<%= @artist_to_edit.id %>' method='post'>
   <input type='hidden' name='_method' value='put'/>
-  <p><input type='text' placeholder='genre 1' name='genre_1'/></p>
-  <p><input type='text' placeholder='genre 2' name='genre_2'/></p>
-  <p><input type='text' placeholder='genre 3' name='genre_3'/></p>
-  <p><input type='text' placeholder='genre 4' name='genre_4'/></p>
+  <p><input type='text' placeholder='Enter Genre' name='genre_name'/></p>
+  <p><input type='submit' value='Add to Artist!'></p>
 </form>
+
+</center>
