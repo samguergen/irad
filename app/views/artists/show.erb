@@ -43,7 +43,7 @@
     <% if @the_artist.genres.count > 0 %>
       <li><em>Genres:</em><li>
       <% @the_artist.genres.each do |genre| %>
-      #<%= genre.name %>
+      <a href="/genres/<%= genre.id %>">#<%= genre.name %></a>
       <% end  %>
     <% end %>
 		<li><em>Description: </em><%= @the_artist.description %></li>
