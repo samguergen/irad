@@ -21,7 +21,7 @@
 </div>
 
 <div class ="list">
-	<ul>
+	<ul>		
 		 <% @all_artists.each do |artist| %>
  <li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
   <% end %>

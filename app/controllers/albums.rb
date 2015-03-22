@@ -1,15 +1,16 @@
 require 'sinatra'
+require 'rubygems'
 
  get '/artists/:id/albums' do
  	@artist_to_edit = Artist.find_by(:id => params[:id])
- 	erb: :'albums/index'
+ 	erb :'albums/index'
  end
 
 
 
  get '/artists/:id/albums/new' do
  	@album_artist = Artist.find_by(:id => params[:id])
- 	erb: :'albums/new'
+ 	erb :'albums/new'
  end
 
 get '/artists/:id/albums/:id/edit' do
@@ -38,11 +39,11 @@ end
 
  	@album_artist = Artist.find_by(:id => params[:id])
  	
- 	@new_album = Album.new {
+ 	@new_album = Album.new(
  							:artist_id => @album_artist.id,
- 							:title => params[:title]
+ 							:title => params[:title],
  							:release_date => params[:release_date]
- 	}
+ 	)
 	if @new_album.save
 		redirect "/artist/#{params[:id]}"
 	else
