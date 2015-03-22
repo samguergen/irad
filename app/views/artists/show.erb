@@ -31,16 +31,22 @@
 	<ul>
 		<li><em>Name:</em>   <%= @the_artist.birth_name %> </li>
 		<li><em>Age:</em>   <%= @the_artist.age %></li>
-		<li><em>Record Label:  </em> <%= @the_artist.record_label %> </li>
-    <% if @the_artist.genres.count > 0 %>
-      <% @the_artist.genres.each do |genre| %>
-        <li><em>Genre:  </em>   <%= @the_artist.genre %> </li>
-      <% end  %>
+
+    <% if @the_artist.record_label_id == nil %>
+      <li><em>Record Label: </em> no record label on file for this artist </li>
+        <% else %>
+      <li><em>Record Label:</em><li>
+      <%= @the_artist.record_label.name %>
     <% end %>
 
 
-		<li><em>Description:   </em><%= @the_artist.description %> </li>
-
+    <% if @the_artist.genres.count > 0 %>
+      <li><em>Genres:</em><li>
+      <% @the_artist.genres.each do |genre| %>
+      #<%= genre.name %>
+      <% end  %>
+    <% end %>
+		<li><em>Description: </em><%= @the_artist.description %></li>
 	</ul>
 </div>
 
