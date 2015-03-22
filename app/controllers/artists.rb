@@ -32,7 +32,7 @@ put '/artists/:id' do
     if @artist_to_update.save
       redirect "/artists/#{params[:id]}"
     else
-      [500, "Something went wrong!"]
+      "Something went wrong!"
     end
   else
     [404, "That artist does not exist"]
