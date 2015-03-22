@@ -15,7 +15,7 @@
 	<form action='/artists/<%= @artist_to_edit.id %>' method='post'>
 			<input type='hidden' name='_method' value='put'/>
 			<% @artist_to_edit.attributes.each do | header, attribute | %>
-				<% unless (attribute == nil) || (header.include?("id")) || (header.include?("at")) %>
+				<% unless (header.include?("id")) || (header.include?("at")) %>
 					<h3><%= header.capitalize %></h3>
 					<input type='text' placeholder='<%= header %>' name='<%= header %>' value='<%= attribute %>'/>
 				<% end %>
