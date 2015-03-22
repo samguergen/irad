@@ -1,4 +1,6 @@
 <center>
+
+<h1> Record Label Edit Form </h1>
 <form action='/record_labels/<%=@label_to_edit.id%>' method='post'>
   <input type='hidden' name='_method' value='put'/>
   <input type='text' name='name' placeholder='name' value=<%=@label_to_edit.name%> />

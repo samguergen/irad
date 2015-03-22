@@ -1,7 +1,7 @@
 Artist detail page for <%= @the_artist.moniker%>
 
-<p><%= @the_artist.age %></p>
-<p><%= @the_artist.description %></p>
+<p>Artist age:<%= @the_artist.age %></p>
+<p>Artist description:<%= @the_artist.description %></p>
 
 <p><a href='/artists/<%=@the_artist.id%>/edit'>Edit artist </a></p>
 <form action='/artists/<%=@the_artist.id%>/delete' method='post'>
