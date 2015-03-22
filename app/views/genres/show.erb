@@ -1,4 +1,4 @@
 <h1><%= @cur_genre.name %></h1>
 <% @cur_genre.artists.each do |artist| %>
-  <p><%= artist.moniker %></p>
+  <p><a href='/artists/<%= artist.id %>'><%= artist.moniker %></a></p>
 <% end %>
