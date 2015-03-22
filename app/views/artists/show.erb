@@ -50,7 +50,8 @@
 	</ul>
 </div>
 
-<p><a id="new_artist" href='/artists/<%=@the_artist.id%>/edit'>Edit Artist </a></p>
+<p><a id="new_artist" href='/artists/<%= @the_artist.id %>/edit'>Edit Artist</a></p>
+
 <form action='/artists/<%=@the_artist.id%>/delete' method='post'>
   <input type='hidden' name='_method' value='delete'/>
   <input type='Submit' value='Delete'/>
