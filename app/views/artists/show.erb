@@ -6,7 +6,7 @@ Artist detail page for <%= @the_artist.moniker%>
 <% if @the_artist.genres.count > 0 %>
   <% @the_artist.genres.each do |genre| %>
     <p><%= genre.name %></p>
-  <% end %>
+  <% end  %>
 <% end %>
 
 <p><a href='/artists/<%=@the_artist.id%>/edit'>Edit artist </a></p>

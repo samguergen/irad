@@ -1,0 +1,12 @@
+<center>
+  <h1>Edit Genres for <%= @artist_to_edit.moniker %>
+<form action='/artist_genres/<%= @artist_to_edit.id %>' method='post'>
+  <input type='hidden' name='_method' value='put'/>
+  <% if @artist_to_edit.genres.count == 0 %>
+      <input type='text' placeholder='genre 1' name='genre_name'>
+  <% else %>
+    <% @artist_to_edit.genres.each do |genre| %>
+        <p><input type='text' placeholder='genre 1' name='genre_name' value='<%= genre.name %>'/></p>
+    <% end %>
+  <% end %>
+</form>
