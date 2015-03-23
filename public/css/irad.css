@@ -27,6 +27,17 @@ header {
 	margin-bottom: 23em;
 	height: 100%;
 	margin-top: 9em;
+
+}
+
+#about_body {
+	background-image: url('/about_background.jpg');
+	background-size: cover;
+	margin-bottom: 23em;
+	height: 100%;
+	margin-top: 9em;
+	opacity: 0.8;
+    filter:alpha(opacity=80);
 }
 
 #title {
@@ -88,6 +99,23 @@ header {
 #index_image {
 	width: 100%;
 	margin-top: 2em;
+}
+
+#about {
+	margin-bottom: -10em;
+	border-bottom-width: 2em;
+	padding-bottom: 2em;
+	margin-top: -1em;
+	
+}	
+
+
+#about_sent {
+	color: white;
+	background-color:rgba(0, 0, 0, 0.8);
+	font-family:ubuntu;
+	padding: 5em;
+	font-size: 1.2em
 }
 
 #irad1 {
