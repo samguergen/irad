@@ -32,8 +32,11 @@
 	<ul>
 		<li><em>Name:</em>   <%= @the_artist.birth_name %> </li>
 		<li><em>Age:</em>   <%= @the_artist.age %></li>
-		<li><em>Record Label:  </em> <%= @the_artist.record_label %> </li>
-		<li><em>Genre:  </em>   <%= @the_artist.genres %> </li>
+		<li><em>Genre:  </em>   <% if @the_artist.genres.count > 0 %>
+  <% @the_artist.genres.each do |genre| %>
+    <%= genre.name %>
+  <% end  %>
+<% end %></li>
 		<li><em>Description:   </em><%= @the_artist.description %> </li>
 
 	</ul>

@@ -28,4 +28,6 @@
 			<input class="edit_option" type='text' placeholder='record label' name='record_label' value='<%= @artist_to_edit.record_label.name %>'/>
 			<input class = "button" id="create" type='submit' value='Edit'>
 </form>
+
+<p><a href="/artist_genres/<%= @artist_to_edit.id %>/edit">Edit Artist's Genres</a></p>
 </section>

@@ -204,6 +204,13 @@ h3 {
 	font-size: .8em;
 }
 
+#search_bar {
+	font-family: lato;
+	border-color: white;
+	border-style: solid;
+	font-size: .8em;
+}
+
 .button {
 	font-size: 1em;
 	margin-top: .3em;
