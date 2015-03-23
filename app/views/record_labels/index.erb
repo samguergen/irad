@@ -1,0 +1,18 @@
+<center>
+<h1> List of all Record Labels </h1>
+
+<% @records.each do |rec| %>
+
+<p><a href='/record_labels/<%=rec.id%>'> <%=rec.name %>
+</a></p>
+
+<% end %>
+
+<b>
+<p><a href='/record_labels/new'>Create new record label
+</a></p>
+
+<p><a href='/artists'> View list of all artists</a></p></b>
+</center>
+
+

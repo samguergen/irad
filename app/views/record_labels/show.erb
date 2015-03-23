@@ -1,0 +1,16 @@
+
+<center>
+<h1> Record Label Details </h1>
+<p> <em>Name:</em>
+<br> <%= @the_label.name %></p>
+<p><em>Founding date:</em>
+<br><%= @the_label.founding_date %></p>
+
+<p><a href='/record_labels/<%=@the_label.id%>/edit'>Edit!</a></p>
+<form action='/record_labels/<%=@the_label.id%>/delete' method='post'>
+<input type='hidden' name='_method' value='delete'/>
+<input type='submit' value='Delete!'/></form>
+<p><a href='/record_labels'> Go back to all labels</a></p>
+<p><a href='/artists'>Go back to all artists</a></p>
+
+</center>
