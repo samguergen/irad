@@ -19,7 +19,7 @@ header {
 	background-color: white
 }
 
-#about_bod {
+#about_body {
   background-image: url('/about_background.jpg');
   background-size: cover;
   margin-bottom: 23em;
