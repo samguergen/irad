@@ -15,17 +15,21 @@
 	
 </header>
 
-<h1> Record Label Details </h1>
-<p> <em>Name:</em>
-<br> <%= @the_label.name %></p>
-<p><em>Founding date:</em>
-<br><%= @the_label.founding_date %></p>
+<div id="edit_title">
+  <h1>Record Label Details</h1>
+  
+</div>
 
-<p><a href='/record_labels/<%=@the_label.id%>/edit'>Edit!</a></p>
-<form action='/record_labels/<%=@the_label.id%>/delete' method='post'>
-<input type='hidden' name='_method' value='delete'/>
-<input type='submit' value='Delete!'/></form>
-<p><a href='/record_labels'> Go back to all labels</a></p>
-<p><a href='/artists'>Go back to all artists</a></p>
+<div class="edit_section">
+	<h3 class="add_to_artist"> <em>Name:</em> </h3>
+	<p> <%= @the_label.name %></p>
+	<h3 class="add_to_artist"><em>Founding date:</em></h3>
+	<p><%= @the_label.founding_date %></p>
+
+	<p><a id="new_artist" href='/record_labels/<%=@the_label.id%>/edit'>Edit</a></p>
+	<form action='/record_labels/<%=@the_label.id%>/delete' method='post'>
+	<input type='hidden' name='_method' value='delete'/>
+	<input class="button" id="genre_delete" type='submit' value='Delete'/></form>
+</div>
 
 </body>

@@ -13,14 +13,23 @@
 	
 </header>
 
-<h1><%= @cur_genre.name %></h1>
-<% @cur_genre.artists.each do |artist| %>
-  <p><a href='/artists/<%= artist.id %>'><%= artist.moniker %></a></p>
-<% end %>
+<div id="edit_title">
+	  <h1>Edit Genres for Artist</h1>
+	  
+	</div>
 
-<form action='/genres/<%= @cur_genre.id %>/delete' method='post'>
-  <input type='hidden' name='_method' value='delete'/>
-  <input type='Submit' value='Delete Genre!'/>
-</form>
+<section id="edit_section_genre">
+	
+
+	<h2> <%= @cur_genre.name %></h2>
+	<% @cur_genre.artists.each do |artist| %>
+	  <p><a href='/artists/<%= artist.id %>'><%= artist.moniker %></a></p>
+	<% end %>
+
+	<form action='/genres/<%= @cur_genre.id %>/delete' method='post'>
+	  <input type='hidden' name='_method' value='delete'/>
+	  <input class="button" id="genre_delete" type='Submit' value='Delete Genre'/>
+	</form>
+</section>
 
 </body>

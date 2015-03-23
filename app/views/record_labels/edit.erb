@@ -11,15 +11,18 @@
 	
 </header>
 
+<div id="edit_title">
+  <h1>Record Label Edit</h1>
+  
+</div>
 
 <section id="form">
 
-<h1> Record Label Edit Form </h1>
 <form action='/record_labels/<%=@label_to_edit.id%>' method='post'>
   <input class="edit_option" type='hidden' name='_method' value='put'/>
   <input class="edit_option" type='text' name='name' placeholder='name' value=<%=@label_to_edit.name%> />
   <input class="edit_option" type='text' placeholder ='founding date' name='founding_date' value=<%=@label_to_edit.founding_date%> >
-  <input id="button" type='submit' value='Edit it!'>
+  <input class="button" type='submit' value='Edit Label'>
 </form>
-<p><a href='/record_labels/<%=@label_to_edit.id%>'>Go back to record details</a></p>
+<p><a id="new_artist" href='/record_labels/<%=@label_to_edit.id%>'>Record Details</a></p>
 </section id="form">

@@ -171,6 +171,10 @@ p {
 	margin-top: 8em; 
 }
 
+#edit_section_genre {
+	margin-top: 8em;
+}
+
 .add_to_artist {
 	margin-left: 27em;
 }
@@ -218,10 +222,19 @@ ul a {
 
 }
 
+h2 {
+	font-family: lato;
+	margin-left: 23.7em;
+}
+
 h3 {
 	font-family: lato;
 	margin-bottom: -.01em;
 	font-size: 1.2em;
+}
+
+#label {
+	margin-left: 33em;
 }
 
 .edit_option {
