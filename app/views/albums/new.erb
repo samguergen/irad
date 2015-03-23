@@ -12,8 +12,7 @@
 </header>
 
 <section id="form">
-	<form action='/albums/new' method='post'>
-			<input type='hidden' name='_method' value='put'/>
+	<form action='/artists/<%= @the_artist.id %>/albums' method='post'>
 		<h3>Album Name</h3>
 			<input type='text' placeholder='album title' name='title'/>
 		<h3>Release Date</h3>
