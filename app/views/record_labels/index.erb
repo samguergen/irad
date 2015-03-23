@@ -1,16 +1,42 @@
-<center>
-<h1> List of all Record Labels </h1>
+<section>
+<header >
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Label</li>
+	</ul>
+	
+</header>
+<div id="title">
+	<h1>Record Labels</h1>
+	
+</div>
 
-<% @records.each do |rec| %>
+<div class ="list">
+	<ul>
+		<% @records.each do |rec| %>
 
-<p><a href='/record_labels/<%=rec.id%>'> <%=rec.name %>
-</a></p>
+<li><a class="artist" href='/record_labels/<%=rec.id%>'> <%=rec.name %>
+</a></li>
 
 <% end %>
 
-<b>
-<p><a href='/record_labels/new'>Create new record label
+	</ul>
+
+<p><a id="new_artist" href='/record_labels/new'>Add New Record Label
 </a></p>
+</div>
 
 <p><a href='/artists'> View list of all artists</a></p></b>
-</center>
+
+<section class="scroll-top-wrapper ">
+      <span class="scroll-top-inner">
+        Top
+      </span>
+</section>
+
+</section>
