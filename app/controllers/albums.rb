@@ -34,8 +34,6 @@ end
 
 post '/artists/:id/albums' do
 
- 	# @the_artist = Artist.find_by(:id => params[:id])
-
  	@new_album = Album.new(
  							:artist_id => params[:id],
  							:title => params[:title],
