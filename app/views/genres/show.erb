@@ -16,13 +16,15 @@
 <div id="edit_title">
 	  <h1><%=@cur_genre.name.capitalize%> Artists</h1>
 	  
-	</div>
+</div>
+
 <br></br>
+
 <div class ="list">
 	<ul>		
-	 <% @cur_genre.artists.each do |artist| %>
- 	<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
-  <% end %>
+		<% @cur_genre.artists.each do |artist| %>
+		 	<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+		<% end %>
 	</ul>
 
 </div>
@@ -32,4 +34,5 @@
         Top
       </span>
 </section>
+
 </body>

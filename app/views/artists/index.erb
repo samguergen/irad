@@ -22,11 +22,11 @@
 
 <div class ="list">
 	<ul>		
-		 <% @all_artists.each do |artist| %>
- <li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
-  <% end %>
-
+		<% @all_artists.each do |artist| %>
+			<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+		<% end %>
 	</ul>
+	
 	<p><a id="new_artist" href='/artists/new'>Add New Artist</a></p>
 </div>
 

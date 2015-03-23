@@ -20,12 +20,11 @@
 <div class ="list">
 	<ul>
 		<% @all_genres.each do |genre|%>
-<li><a class="artist" href='/genres/<%= genre.id %>'><%= genre.name %><a/></li>
-<% end %>
-
+			<li><a class="artist" href='/genres/<%= genre.id %>'><%= genre.name %><a/></li>
+		<% end %>
 	</ul>
-<p><a id="new_artist" href='/record_labels/new'>Add New Genre
-</a></p>
+
+	<p><a id="new_artist" href='/record_labels/new'>Add New Genre</a></p>
 </div>
 
 <section class="scroll-top-wrapper ">
