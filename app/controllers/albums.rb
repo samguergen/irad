@@ -16,6 +16,7 @@ end
 
 get '/artists/:id/albums/:id/edit' do
 	@album = Album.find_by(:id => params[:id])
+  @the_artist = Artist.find_by(:id => @album.artist.id)
 	erb :'albums/edit'
 end
 

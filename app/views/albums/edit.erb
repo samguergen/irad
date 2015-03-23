@@ -8,18 +8,18 @@
 		<li>Genres</li>
 		<li>Record Labels</li>
 	</ul>
-	
+
 </header>
 
 <section id="form">
-	<form action='/artists/albums/edit<%= @artist_to_edit.id %>' method='post'>
+	<form action='/artists/<%= @the_artist.id %>/albums/<%= @album.id %>' method='post'>
 			<input type='hidden' name='_method' value='put'/>
 		<h3>Album Name</h3>
-			<input type='text' placeholder='album title' name='title' value='<%= @new_album.title %>'/>
+			<input type='text' placeholder='album title' name='title' value='<%= @album.title %>'/>
 		<h3>Release Date</h3>
-			<input type='text' placeholder='release date' name='release_date' value='<%= @new_album.release_date %>'/>
+			<input type='text' placeholder='release date' name='release_date' value='<%= @album.release_date %>'/>
 			<input id="create" type='submit' value='Edit'>
-			
+		</form>
 </section>
 
 
