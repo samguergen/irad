@@ -1,8 +1,36 @@
-<center>
-<h1> All artists </h1>
-  <% @all_artists.each do |artist| %>
- <p><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></p>
+
+<section>
+
+<header >
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Label</li>
+	</ul>
+	
+</header>
+
+
+<div id="title">
+	<h1>Artists</h1>
+	
+</div>
+
+<div class ="list">
+	<ul>
+		 <% @all_artists.each do |artist| %>
+ <li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
   <% end %>
 
-<p><a href='/artists/new'>Add a new artist!</a></p>
-</center>
+	</ul>
+	<p><a id="new_artist" href='/artists/new'>Add New Artist</a></p>
+</div>
+
+
+
+	
+</section>

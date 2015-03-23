@@ -1,0 +1,24 @@
+<center>
+
+  <h1>Edit Genres for <%= @artist_to_edit.moniker %></h1>
+    <p>Current Genres:</p>
+    <% if @artist_to_edit.genres.count == 0 %>
+      No genres associated with this artist.
+    <% else %>
+      <% @artist_to_edit.genres.each do |genre| %>
+          <p><%= genre.name.capitalize %>
+  <form action="/artist_genres/<%= @artist_to_edit.id %>/delete_genre_from_artist/<%= genre.id %>" method='post'>
+  <input type='hidden' name='_method' value='delete'/>
+  <input type='Submit' value='Delete <%= genre.name %>!'/>
+</form>
+      <% end %>
+    <% end %>
+  <h3>Add Genres for <%= @artist_to_edit.moniker %></h3>
+
+<form action='/artist_genres/<%= @artist_to_edit.id %>' method='post'>
+  <input type='hidden' name='_method' value='put'/>
+  <p><input type='text' placeholder='Enter Genre' name='genre_name'/></p>
+  <p><input type='submit' value='Add to Artist!'></p>
+</form>
+
+</center>

@@ -1,12 +1,45 @@
-<center>
-<form action='/artists/<%= @artist_to_edit.id %>' method='post'>
-  <input type='hidden' name='_method' value='put'/>
-  <input type='text' placeholder='stage name' name='moniker' value='<%= @artist_to_edit.moniker %>'/>
-  <input type='text' placeholder='birth name' name='birth_name' value='<%= @artist_to_edit.birth_name %>'/>
-  <input type='text' placeholder='description' name='description' value='<%= @artist_to_edit.description %>'/>
-  <input type='text' placeholder='age' name='age' value='<%= @artist_to_edit.age %>'/>
-  <input type='text' placeholder='record label' name='record_label' value='<%= @artist_to_edit.record_label.name %>'/>
-  <input type='submit' value='Edit!'>
+
+<header>
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="/irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Labels</li>
+	</ul>
+
+</header>
+<section id="form">
+	<form action='/artists/<%= @artist_to_edit.id %>' method='post'>
+			<input type='hidden' name='_method' value='put'/>
+			<% @artist_to_edit.attributes.each do | header, attribute | %>
+
+				<% if header == "moniker" %>
+					<% header = "Stage Name" %>
+				<% end %>
+
+				<% if header == "birth_name" %>
+					<% header = "Birth Name" %>
+				<% end %>
+
+				<% unless (header.include?("id")) || (header.include?("at")) %>
+					<h3><%= header.capitalize %></h3>
+					<input type='text' placeholder='<%= header %>' name='<%= header %>' value='<%= attribute %>'/>
+				<% end %>
+			<% end %>
+			<h3>Record Label</h3>
+			<% if @artist_to_edit.record_label_id == nil %>
+				<input type='text' placeholder='add record label' name='record_label' />
+			<% else %>
+				<input type='text' placeholder='add record label' name='record_label' value='<%= @artist_to_edit.record_label.name %> '/>
+			<% end %>
+
+<input id="create" type='submit' value='Edit!'>
 </form>
-</center>
+
+<p><a href="/artist_genres/<%= @artist_to_edit.id %>/edit">Edit Artist's Genres</a></p>
+
+</section>
 

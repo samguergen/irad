@@ -1,4 +1,7 @@
 require 'sinatra'
+require 'rubygems'
+
+set :public_folder, 'public'
 
 get '/artists' do
   @all_artists = Artist.all
