@@ -1,7 +1,7 @@
 $(document).ready(function() {
   $('.scroll-top-wrapper').on('click', scrollToTop);
 
-})
+});
 function scrollToTop() {
   verticalOffset = typeof(verticalOffset) != 'undefined' ? verticalOffset : 0;
   element = $('body');

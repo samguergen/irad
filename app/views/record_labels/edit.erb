@@ -1,0 +1,25 @@
+<header>
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="/irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li>Record Labels</li>
+	</ul>
+	
+</header>
+
+
+<section id="form">
+
+<h1> Record Label Edit Form </h1>
+<form action='/record_labels/<%=@label_to_edit.id%>' method='post'>
+  <input class="edit_option" type='hidden' name='_method' value='put'/>
+  <input class="edit_option" type='text' name='name' placeholder='name' value=<%=@label_to_edit.name%> />
+  <input class="edit_option" type='text' placeholder ='founding date' name='founding_date' value=<%=@label_to_edit.founding_date%> >
+  <input class="button" type='submit' value='Edit it!'>
+</form>
+<p><a href='/record_labels/<%=@label_to_edit.id%>'>Go back to record details</a></p>
+</section id="form">
