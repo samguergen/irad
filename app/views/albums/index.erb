@@ -17,5 +17,7 @@
 
 <section>
 
-	<p><%= @artist_to_edit.albums %></p>
+	<% @artist_to_edit.albums.each do | album | %>
+		<p><a href="/artists/<%= @artist_to_edit.id %>/albums/<%= album.id %>"> <%= album.title %></a></p>
+	<% end %>
 </section>

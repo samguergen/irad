@@ -14,22 +14,22 @@
 </header>
 
 <div id="edit_title">
-	  <h1>Edit Genres for Artist</h1>
+	  <h1><%=@cur_genre.name.capitalize%> Artists</h1>
 	  
 	</div>
+<br></br>
+<div class ="list">
+	<ul>		
+	 <% @cur_genre.artists.each do |artist| %>
+ 	<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+  <% end %>
+	</ul>
 
-<section id="edit_section_genre">
-	
+</div>
 
-	<h2> <%= @cur_genre.name %></h2>
-	<% @cur_genre.artists.each do |artist| %>
-	  <p><a href='/artists/<%= artist.id %>'><%= artist.moniker %></a></p>
-	<% end %>
-
-	<form action='/genres/<%= @cur_genre.id %>/delete' method='post'>
-	  <input type='hidden' name='_method' value='delete'/>
-	  <input class="button" id="genre_delete" type='Submit' value='Delete Genre'/>
-	</form>
+<section class="scroll-top-wrapper ">
+      <span class="scroll-top-inner">
+        Top
+      </span>
 </section>
-
 </body>

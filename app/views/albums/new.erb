@@ -12,12 +12,11 @@
 </header>
 
 <section id="form">
-	<form action='/albums/new' method='post'>
-			<input type='hidden' name='_method' value='put'/>
+	<form action='/artists/<%= @the_artist.id %>/albums' method='post'>
 		<h3>Album Name</h3>
-			<input type='text' placeholder='album title' name='title' value='<%= @new_album.title %>'/>
+			<input class="edit_option" type='text' placeholder='album title' name='title'/>
 		<h3>Release Date</h3>
-			<input type='text' placeholder='release date' name='release_date' value='<%= @new_album.release_date %>'/>
-			<input id="create" type='submit' value='Create'>
+			<input class="edit_option" type='text' placeholder='release date' name='release_date'/>
+			<input class="button" ="button" id="create" type='submit' value='Create'>
 </form>
 </section>
