@@ -332,3 +332,38 @@ h4 {
 	visibility: visible;
 	width: auto;
 }
+
+
+.scroll-top-wrapper {
+    position: fixed;
+	/*opacity: 0;*/
+	/*visibility: hidden;*/
+	overflow: hidden;
+	text-align: center;
+	z-index: 99999999;
+    background-color:rgba(150, 142, 142, 0.5);
+	color: white;
+	width: 50px;
+	height: 48px;
+	line-height: 48px;
+	right: 30px;
+	bottom: 30px;
+	padding-top: 2px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.scroll-top-wrapper span:hover {
+	color: yellow;
+}
+.scroll-top-wrapper.show {
+    visibility:visible;
+    cursor:pointer;
+	opacity: 1.0;
+}
+.scroll-top-wrapper i.fa {
+	line-height: inherit;
+}

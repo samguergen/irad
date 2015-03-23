@@ -7,7 +7,7 @@
 
 
  get '/artists/:id/albums/new' do
- 	@the_artist = Artist.find_by(:id => params[:id])
+ 	@new_album = Album.find_by(:artist_id => params[:id])
  	erb :'albums/new'
  end
 
