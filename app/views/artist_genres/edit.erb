@@ -1,0 +1,38 @@
+<header>
+  <div class="banner">
+  </div>
+  <a href="/"><img id="logo2" src="/irad_logo.png" style="width:3.2em;height:1.0em"></a>
+  <ul>
+    <li>About</li>
+    <li><a href='/artists'>Artists</a></li>
+    <li>Genres</li>
+<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+  </ul>
+  
+</header>
+
+
+<center>
+
+  <h1>Edit Genres for <%= @artist_to_edit.moniker %></h1>
+    <p>Current Genres:</p>
+    <% if @artist_to_edit.genres.count == 0 %>
+      No genres associated with this artist.
+    <% else %>
+      <% @artist_to_edit.genres.each do |genre| %>
+          <p><%= genre.name.capitalize %>
+  <form action="/artist_genres/<%= @artist_to_edit.id %>/delete_genre_from_artist/<%= genre.id %>" method='post'>
+  <input class="edit_option" type='hidden' name='_method' value='delete'/>
+  <input id="button" type='Submit' value='Delete <%= genre.name %>!'/>
+</form>
+      <% end %>
+    <% end %>
+  <h3>Add Genres for <%= @artist_to_edit.moniker %></h3>
+
+<form action='/artist_genres/<%= @artist_to_edit.id %>' method='post'>
+  <input  type='hidden' name='_method' value='put'/>
+  <p><input class="edit_option" type='text' placeholder='Enter Genre' name='genre_name'/></p>
+  <p><input id="button" type='submit' value='Add to Artist!'></p>
+</form>
+
+</center>
