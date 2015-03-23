@@ -12,27 +12,30 @@
 </header>
 
 
-<center>
+<div id="edit_title">
+  <h1>Edit Genres for Artist</h1>
+  
+</div>
 
-  <h1>Edit Genres for <%= @artist_to_edit.moniker %></h1>
-    <p>Current Genres:</p>
+<div class = "edit_section">
+    <h3 class="add_to_artist">Current Genres:</h3>
     <% if @artist_to_edit.genres.count == 0 %>
       No genres associated with this artist.
     <% else %>
       <% @artist_to_edit.genres.each do |genre| %>
-          <p><%= genre.name.capitalize %>
+          <h3 class ="add_to_artist"><%= genre.name.capitalize %></h3>
   <form action="/artist_genres/<%= @artist_to_edit.id %>/delete_genre_from_artist/<%= genre.id %>" method='post'>
   <input class="edit_option" type='hidden' name='_method' value='delete'/>
-  <input id="button" type='Submit' value='Delete <%= genre.name %>!'/>
+  <input  class="button" id="genre_delete" type='Submit' value='Delete <%= genre.name %>'/>
 </form>
       <% end %>
     <% end %>
-  <h3>Add Genres for <%= @artist_to_edit.moniker %></h3>
+  <h3 class="add_to_artist">Add Genres for Artist</h3>
 
 <form action='/artist_genres/<%= @artist_to_edit.id %>' method='post'>
   <input  type='hidden' name='_method' value='put'/>
   <p><input class="edit_option" type='text' placeholder='Enter Genre' name='genre_name'/></p>
-  <p><input id="button" type='submit' value='Add to Artist!'></p>
+  <p><input class="button" type='submit' value='Add to Artist'></p>
 </form>
 
-</center>
+</div>

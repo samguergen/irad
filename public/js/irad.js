@@ -7,7 +7,7 @@ function scrollToTop() {
   element = $('body');
   offset = element.offset();
   offsetTop = offset.top;
-  $('html, body').animate({scrollTop: offsetTop}, 500, 'linear');
+  $('html, body').animate({scrollTop: offsetTop}, 600, 'linear');
 }
 $(document).on( 'scroll', function(){
   if ($(window).scrollTop() > 50) {

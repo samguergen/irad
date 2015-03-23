@@ -12,6 +12,10 @@
 	
 </header>
 
+<div id="edit_title">
+	<h1>Edit Artist</h1>
+	
+</div>
 
 <section id="form">
 	<form action='/artists/<%= @artist_to_edit.id %>' method='post'>
@@ -29,5 +33,6 @@
 			<input class = "button" id="create" type='submit' value='Edit'>
 </form>
 
-<p><a href="/artist_genres/<%= @artist_to_edit.id %>/edit">Edit Artist's Genres</a></p>
+
 </section>
+<p><a  class = "edit_genre" id="new_artist" href="/artist_genres/<%= @artist_to_edit.id %>/edit">Edit Artist's Genres</a></p>

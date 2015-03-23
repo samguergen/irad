@@ -25,7 +25,7 @@
 </div>
 
 <div id="artist_img">
-	<img id="profile" src="/blank_avatar.png" alt="artist_avatar" style="width:32em;height:27em">
+	<img id="profile" src="/blank_avatar.png" alt="artist_avatar" style="width:20em;height:22em">
 </div>
 
 <div class ="bio">
@@ -42,10 +42,10 @@
 	</ul>
 </div>
 
-<p><a id="new_artist" href='/artists/<%=@the_artist.id%>/edit'>Edit Artist </a></p>
+<p><a class ="bio_edit" id="new_artist" href='/artists/<%=@the_artist.id%>/edit'>Edit Artist </a></p>
 <form action='/artists/<%=@the_artist.id%>/delete' method='post'>
   <input type='hidden' name='_method' value='delete'/>
-  <input class ="button" type='Submit' value='Delete' />
+  <input id="bio_delete" class ="button" type='Submit' value='Delete' />
 
 
 <div id="album_section">
@@ -54,7 +54,7 @@
 
 <img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/6/63/Total_Loss_cover_art.jpg" alt="Total Loss" style="width:25em;height:25em">
 	<img class="album_image" src="http://upload.wikimedia.org/wikipedia/en/7/75/How_To_Dress_Well_-_What_Is_This_Heart.jpg" alt="What is This Heart" style="width:25em;height:25em">
-	<p><a id="new_artist" href='/albums/new'>Add New Album</a></p>
+	<p><a class="add_new" id="new_artist" href='/albums/new'>Add New Album</a></p>
 </div>
 
 <section class="scroll-top-wrapper ">
