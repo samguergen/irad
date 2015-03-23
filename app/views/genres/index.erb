@@ -1,5 +1,37 @@
-<h1>All Genres</h1>
-<% @all_genres.each do |genre|%>
-<p><a href='/genres/<%= genre.id %>'><%= genre.name %><a/></p>
+<section>
+<header >
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li>About</li>
+		<li><a href='/artists'>Artists</a></li>
+		<li>Genres</li>
+		<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+	</ul>
+	
+</header>
+
+<div id="title">
+	<h1>Genres</h1>
+	
+</div>
+
+<div class ="list">
+	<ul>
+		<% @all_genres.each do |genre|%>
+<li><a class="artist" href='/genres/<%= genre.id %>'><%= genre.name %><a/></li>
 <% end %>
-<p><a href='/genres/new'>Add a new Genre!</a></p>
+
+	</ul>
+<p><a id="new_artist" href='/record_labels/new'>Add New Genre
+</a></p>
+</div>
+
+<section class="scroll-top-wrapper ">
+      <span class="scroll-top-inner">
+        Top
+      </span>
+</section>
+
+</section>
