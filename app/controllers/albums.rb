@@ -5,7 +5,7 @@
  end
 
  get '/artists/:id/albums/new' do
- 	@the_artist = Artist.find_by(:id => params[:id])
+ 	@new_album = Album.find_by(:artist_id => params[:id])
  	erb :'albums/new'
  end
 
@@ -41,7 +41,7 @@ post '/artists/:id/albums' do
  							:release_date => params[:release_date]
  	)
 	if @new_album.save
-		redirect "/artist/#{params[:id]}"
+		redirect "/artists/#{params[:id]}"
 	else
 		[500, "Something went wrong!"]
 	end
