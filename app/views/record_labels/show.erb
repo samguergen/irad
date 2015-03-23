@@ -20,7 +20,24 @@
   
 </div>
 
-<div class="edit_section">
+<br></br>
+
+<div class ="list">
+	<ul>		
+	 <% @the_label.artists.each do |artist| %>
+ 	<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+  <% end %>
+	</ul>
+
+</div>
+
+<section class="scroll-top-wrapper ">
+      <span class="scroll-top-inner">
+        Top
+      </span>
+</section>
+
+<% if false %><div class="edit_section">
 	<h3 class="add_to_artist"> <em>Name:</em> </h3>
 	<p> <%= @the_label.name %></p>
 	<h3 class="add_to_artist"><em>Founding date:</em></h3>
@@ -31,5 +48,5 @@
 	<input type='hidden' name='_method' value='delete'/>
 	<input class="button" id="genre_delete" type='submit' value='Delete'/></form>
 </div>
-
+<% end %>
 </body>

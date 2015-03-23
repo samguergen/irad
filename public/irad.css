@@ -19,6 +19,14 @@ header {
 	background-color: white
 }
 
+#about_bod {
+  background-image: url('/about_background.jpg');
+  background-size: cover;
+  margin-bottom: 23em;
+  height: 100%;
+  margin-top: 9em;
+}
+
 #logo_body {
 	background-image: url(http://quedup.net/wp-content/uploads/2013/04/Headphones-Gray-Music.jpg);
 	background-size: cover;
