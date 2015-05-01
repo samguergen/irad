@@ -1,8 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
+<title>iRAD</title>
+	<meta charset="UTF-8">
+	<link href="<%= url('/css/irad.css')%>" rel="stylesheet" type="text/css" />
+	<link href='http://fonts.googleapis.com/css?family=Lato|PT+Sans|Ubuntu|PT+Serif|Vollkorn' rel='stylesheet' type='text/css'>
+	<link rel="shortcut icon" href="imgs/Favicon.png" type="image/x-icon">
+	<link rel="icon" href="imgs/Favicon.png" type="image/x-icon">
+	<meta name="viewport" content="initial-scale=1.0">
 </head>
 <body>
+
+	
+	
   <%= yield %>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <script type="text/javascript" src="/js/irad.js"></script>
+	
+	
 </body>
+	
 </html>

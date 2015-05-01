@@ -1,17 +1,4 @@
-<<<<<<< HEAD
-<center>
-<h1> All artists </h1>
-  <% @all_artists.each do |artist| %>
- <p><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></p>
-  <% end %>
-
-<p><a href='/artists/new'>Add a new artist!</a></p>
-<p><a href='/record_labels'>Record labels</a></p>
-</center>
-=======
-
 <section>
-
 <header >
 	<div class="banner">
 	</div>
@@ -25,20 +12,19 @@
 	
 </header>
 
-
 <div id="title">
-	<h1>Artists</h1>
+	<h1>Genres</h1>
 	
 </div>
 
 <div class ="list">
-	<ul>		
-		<% @all_artists.each do |artist| %>
-			<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+	<ul>
+		<% @all_genres.each do |genre|%>
+			<li><a class="artist" href='/genres/<%= genre.id %>'><%= genre.name %><a/></li>
 		<% end %>
 	</ul>
-	
-	<p><a id="new_artist" href='/artists/new'>Add New Artist</a></p>
+
+	<p><a id="new_artist" href='/record_labels/new'>Add New Genre</a></p>
 </div>
 
 <section class="scroll-top-wrapper ">
@@ -47,7 +33,4 @@
       </span>
 </section>
 
-
-	
 </section>
->>>>>>> final

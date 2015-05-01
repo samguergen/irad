@@ -1,0 +1,38 @@
+<body>
+
+<header>
+	<div class="banner">
+	</div>
+	<a href="/"><img id="logo2" src="/irad_logo.png" style="width:3.2em;height:1.0em"></a>
+	<ul>
+		<li class="main_ul"><a href='/about'>About</a></li>
+		<li><a href='/artists'>Artists</a></li>
+		<li class="main_ul"><a href='/genres'>Genres</a></li>
+		<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+	</ul>
+	
+</header>
+
+<div id="edit_title">
+	  <h1><%=@cur_genre.name.capitalize%> Artists</h1>
+	  
+</div>
+
+<br></br>
+
+<div class ="list">
+	<ul>		
+		<% @cur_genre.artists.each do |artist| %>
+		 	<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
+		<% end %>
+	</ul>
+
+</div>
+
+<section class="scroll-top-wrapper ">
+      <span class="scroll-top-inner">
+        Top
+      </span>
+</section>
+
+</body>

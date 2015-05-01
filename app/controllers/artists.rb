@@ -1,4 +1,3 @@
-require 'sinatra'
 
 get '/artists' do
   @all_artists = Artist.all
