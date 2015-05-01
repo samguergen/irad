@@ -1,8 +1,6 @@
 require 'sinatra'
 
 get '/genres' do
-end
-
   @all_genres = Genre.all
   erb :'genres/index'
 end
