@@ -1,22 +1,3 @@
-
-<<<<<<< HEAD
-<center>
-<h1> Record Label Details </h1>
-<p> <em>Name:</em>
-<br> <%= @the_label.name %></p>
-<p><em>Founding date:</em>
-<br><%= @the_label.founding_date %></p>
-
-<p><a href='/record_labels/<%=@the_label.id%>/edit'>Edit!</a></p>
-<form action='/record_labels/<%=@the_label.id%>/delete' method='post'>
-<input type='hidden' name='_method' value='delete'/>
-<input type='submit' value='Delete!'/></form>
-<p><a href='/record_labels'> Go back to all labels</a></p>
-<p><a href='/artists'>Go back to all artists</a></p>
-
-</center>
-=======
-
 <body>
 
 <header>
@@ -29,18 +10,18 @@
 		<li class="main_ul"><a href='/genres'>Genres</a></li>
 		<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
 	</ul>
-	
+
 </header>
 
 <div id="edit_title">
   <h1>Record Label Details</h1>
-  
+
 </div>
 
 <br></br>
 
 <div class ="list">
-	<ul>		
+	<ul>
 	 <% @the_label.artists.each do |artist| %>
  	<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
   <% end %>
@@ -66,5 +47,6 @@
 	<input class="button" id="genre_delete" type='submit' value='Delete'/></form>
 </div>
 <% end %>
+
+<p><a href='/artists'>Go back to all artists</a></p>
 </body>
->>>>>>> final
