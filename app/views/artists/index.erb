@@ -1,14 +1,4 @@
-<<<<<<< HEAD
-<center>
-<h1> All artists </h1>
-  <% @all_artists.each do |artist| %>
- <p><a href="/artists/<%= artist.id %>"><%= artist.moniker %></a></p>
-  <% end %>
 
-<p><a href='/artists/new'>Add a new artist!</a></p>
-<p><a href='/record_labels'>Record labels</a></p>
-</center>
-=======
 
 <section>
 
@@ -22,22 +12,22 @@
 		<li class="main_ul"><a href='/genres'>Genres</a></li>
 		<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
 	</ul>
-	
+
 </header>
 
 
 <div id="title">
 	<h1>Artists</h1>
-	
+
 </div>
 
 <div class ="list">
-	<ul>		
+	<ul>
 		<% @all_artists.each do |artist| %>
 			<li ><a class="artist" href="/artists/<%= artist.id %>"><%= artist.moniker %></a></li>
 		<% end %>
 	</ul>
-	
+
 	<p><a id="new_artist" href='/artists/new'>Add New Artist</a></p>
 </div>
 
@@ -48,6 +38,6 @@
 </section>
 
 
-	
+
 </section>
->>>>>>> final
+
