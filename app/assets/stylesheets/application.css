@@ -16,13 +16,19 @@ header {
   border: none;
 }
 
+#logo {
+  height: 4em;
+  position: relative;
+  top: -3em;
+}
+
 
 #artist_body {
   background-color: white;
 }
 
 #logo_body {
-  background-image: url('/assets/main_background.jpg');
+  background: url('/assets/main_background.jpg') no-repeat center center fixed;
   background-size: cover;
   margin-bottom: 23em;
   height: 100%;
@@ -31,7 +37,7 @@ header {
 }
 
 #about_body {
-  background-image: url('/about_background.jpg');
+  background-image: url('/assets/about_background.jpg');
   background-size: cover;
   margin-bottom: 23em;
   height: 100%;
@@ -118,9 +124,8 @@ header {
 #irad1 {
   color: yellow;
   font-family: ubuntu;
-  font-size: 8em;
-  text-align: center;
-  margin-right: 2em;
+  font-weight: bold;
+  margin-left: -.1em;
 }
 
 #irad2 {
@@ -132,8 +137,8 @@ header {
   font-family: ubuntu;
   font-size: 8em;
   text-align: center;
-  margin-left: 3.9em;
-  margin-top: -1.82em;
+  position: relative;
+  left: -1em;
 }
 
 #irad3 {
