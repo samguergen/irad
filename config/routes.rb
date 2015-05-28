@@ -10,4 +10,6 @@ Rails.application.routes.draw do
   resources :record_labels, path: 'recordlabels'
   resources :genres
 
+  root to: 'welcome#index'
+
 end
