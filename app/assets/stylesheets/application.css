@@ -12,9 +12,7 @@ header {
 }
 
 #main_header {
-  position: fixed;
-  width: 100%;
-  margin-top: -9.0em;
+  background-color: transparent;
 }
 
 
@@ -75,9 +73,6 @@ header {
 
 .main_banner {
   background-size: cover;
-  width: 100%;
-  height: 3em;
-  margin-bottom: -1em;
 }
 
 #logo1 {
