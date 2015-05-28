@@ -1,0 +1,4 @@
+<%= render 'form' %>
+<%= render partial: 'albums/artist_albums', locals: { artist: @artist } %>
+<%= link_to "Edit Artist's Genres", edit_artist_artist_genres_path(@artist) %>
+<%= link_to "Delete Artist", artist_path(@artist), method: :delete %>

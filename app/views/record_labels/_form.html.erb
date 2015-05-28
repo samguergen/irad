@@ -1,0 +1,7 @@
+<%= form_for @record_label do |f| %>
+  <%= f.label 'name' %>
+  <%= f.text_field :name %>
+  <%= f.label 'founding date' %>
+  <%= f.select :founding_date, (Time.zone.now.year - 60)..(Time.zone.now.year) %>
+  <%= f.submit %>
+<% end %>

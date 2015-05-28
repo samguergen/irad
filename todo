@@ -1,0 +1,88 @@
+TODO
+
+GENERAL
+=======
+[X] write seed file
+  [X] 10 record labels
+  [X] 10 genres
+  [X] 30 artists
+    [x] 4 genres each
+    [x] 5 albums each
+      [x] 8 songs each
+
+Testing
+=======
+  [ ] model tests
+
+  [ ] unit tests
+    [ ] test DB associations
+    [ ] test custom model methods
+
+  [ ] feature tests
+    [ ] artists
+
+
+JavaScript
+==========
+[ ] ajax edit/update artists
+[ ] ajax edit/update albums
+[ ] ajax new songs and edit/update songs
+
+
+Error Handling
+==============
+[ ] write in error messages for all failed POST actions
+  [ ] if artist does not save
+  [ ] if artist does not update
+  [ ] if album does not save
+  [ ] if album does not update
+  [ ] if song does not save
+  [ ] if song does not update
+
+[ ] write logic to avoid duplicate records being created
+  [ ] no duplicate artists
+  [ ] no duplicate albums
+  [ ] no duplicate songs
+
+Searching
+=========
+[ ] Header search for artists, albums, songs or genres(how hard would this be?)
+
+Heroku
+======
+[ ] Deploy to Heroku after first release complete
+
+Reach
+=====
+[ ] Refactor nested routes/paths/path helpers to be shorter
+
+
+ARTIST
+======
+[X] all crud
+
+LABEL
+=====
+[X] all crud
+
+GENRE
+=====
+[X] all crud
+[ ] in views/genres/show erb, list all artists associated with that genre
+
+ARTIST_GENRES
+=============
+[X] create relationship
+[ ] destroy relationship
+[X] fix ArtistGenresController#update so no duplicate records get made
+
+ALBUM
+=====
+[X] all crud
+  [ ] figure out how to work with form date drop-downs
+
+SONG
+====
+[X] all crud
+  [ ] create author attribute and default to artist_id
+
