@@ -130,15 +130,19 @@ header {
 
 #irad2 {
   color: white;
-  border-bottom-color: grey;
-  border-bottom-style: solid;
-  border-bottom-width: .2em;
+  
   width: 22%;
   font-family: ubuntu;
   font-size: 8em;
   text-align: center;
   position: relative;
   left: -1em;
+}
+
+#rad {
+  border-bottom-color: grey;
+  border-bottom-style: solid;
+  border-bottom-width: .2em;
 }
 
 #irad3 {
