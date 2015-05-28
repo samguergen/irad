@@ -23,7 +23,7 @@ header {
 }
 
 #logo_body {
-  background-image: url('/main_background.jpg');
+  background-image: url('/assets/main_background.jpg');
   background-size: cover;
   margin-bottom: 23em;
   height: 100%;
