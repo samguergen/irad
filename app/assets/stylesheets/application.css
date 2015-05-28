@@ -13,6 +13,7 @@ header {
 
 #main_header {
   background-color: transparent;
+  border: none;
 }
 
 
@@ -147,26 +148,19 @@ header {
   background-color:rgba(0, 0, 0, 0.5);
 }
 
-header ul {
-  display: block;
-  margin-left: 49em;
-  margin-top: -2.2em;
-  color: white;
+#header_ul {
+  color: white !important;
   font-family: ubuntu;
+}
+
+header ul li a {
+  color: white !important;
+  margin-right: 1.7em;
   transition: .4s ease-in-out;
 }
 
-header ul li {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 1.7em;
-  font-size: 1.0em;
-  text-decoration: none;
-}
-
-header ul li:hover {
-  color: yellow;
-  text-decoration: none;
+header ul li a:hover {
+  color: yellow !important;
 }
 
 
@@ -175,11 +169,6 @@ header ul li a:visited {
   color: white;
 }
 
-header ul li a {
-  list-style-type: none;
-  display: inline-block;
-  text-decoration: none;
-}
 
 header ul li a:hover {
   color: yellow;
