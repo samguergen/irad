@@ -29,4 +29,8 @@ class Artist < ActiveRecord::Base
     "#{id}-#{stage_name.parameterize}"
   end
 
+  def display_name
+    stage_name
+  end
+
 end
