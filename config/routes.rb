@@ -11,5 +11,6 @@ Rails.application.routes.draw do
   resources :genres
 
   root to: 'welcome#index'
+  get 'search/search'
 
 end
