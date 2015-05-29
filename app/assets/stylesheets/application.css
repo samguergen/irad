@@ -12,9 +12,14 @@ header {
 }
 
 #main_header {
-  position: fixed;
-  width: 100%;
-  margin-top: -9.0em;
+  background-color: transparent;
+  border: none;
+}
+
+#logo {
+  height: 4em;
+  position: relative;
+  top: -3em;
 }
 
 
@@ -23,7 +28,7 @@ header {
 }
 
 #logo_body {
-  background-image: url('/main_background.jpg');
+  background: url('/assets/main_background.jpg') no-repeat center center fixed;
   background-size: cover;
   margin-bottom: 23em;
   height: 100%;
@@ -32,7 +37,7 @@ header {
 }
 
 #about_body {
-  background-image: url('/about_background.jpg');
+  background-image: url('/assets/about_background.jpg');
   background-size: cover;
   margin-bottom: 23em;
   height: 100%;
@@ -75,9 +80,6 @@ header {
 
 .main_banner {
   background-size: cover;
-  width: 100%;
-  height: 3em;
-  margin-bottom: -1em;
 }
 
 #logo1 {
@@ -122,22 +124,25 @@ header {
 #irad1 {
   color: yellow;
   font-family: ubuntu;
-  font-size: 8em;
-  text-align: center;
-  margin-right: 2em;
+  font-weight: bold;
+  margin-left: -.1em;
 }
 
 #irad2 {
   color: white;
-  border-bottom-color: grey;
-  border-bottom-style: solid;
-  border-bottom-width: .2em;
+  
   width: 22%;
   font-family: ubuntu;
   font-size: 8em;
   text-align: center;
-  margin-left: 3.9em;
-  margin-top: -1.82em;
+  position: relative;
+  left: -1em;
+}
+
+#rad {
+  border-bottom-color: grey;
+  border-bottom-style: solid;
+  border-bottom-width: .2em;
 }
 
 #irad3 {
@@ -152,26 +157,19 @@ header {
   background-color:rgba(0, 0, 0, 0.5);
 }
 
-header ul {
-  display: block;
-  margin-left: 49em;
-  margin-top: -2.2em;
-  color: white;
+#header_ul {
+  color: white !important;
   font-family: ubuntu;
+}
+
+header ul li a {
+  color: white !important;
+  margin-right: 1.7em;
   transition: .4s ease-in-out;
 }
 
-header ul li {
-  list-style-type: none;
-  display: inline-block;
-  margin-right: 1.7em;
-  font-size: 1.0em;
-  text-decoration: none;
-}
-
-header ul li:hover {
-  color: yellow;
-  text-decoration: none;
+header ul li a:hover {
+  color: yellow !important;
 }
 
 
@@ -180,11 +178,6 @@ header ul li a:visited {
   color: white;
 }
 
-header ul li a {
-  list-style-type: none;
-  display: inline-block;
-  text-decoration: none;
-}
 
 header ul li a:hover {
   color: yellow;
