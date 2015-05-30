@@ -1,3 +1,22 @@
-<% @artists.each do |artist| %>
-  <%= link_to artist.stage_name, artist_path(artist) %>
-<% end %>
+<section>	
+	<div id="title">
+		<h1>Artists</h1>
+	</div>
+
+
+	<div class="list">
+		<ul>
+			<% @artists.each do |artist| %>
+			  <li><%= link_to artist.stage_name, artist_path(artist), :class=>"artist" %></li>
+			<% end %>
+		</ul>
+
+		<p><a id="new_artist" href="/artists/new">Add New Artist</a></p>
+	</div>
+
+	<section class="scroll-top-wrapper">
+		<span class="scroll-top-inner">
+			Top
+		</span>
+	</section>
+</section>
