@@ -1,3 +1,22 @@
-<% @genres.each do |genre| %>
-  <p><%= link_to genre.name, genre_path(genre) %></p>
-<% end %>
+<section>
+
+	<div class="title">
+		<h1>Genres</h1>
+	</div>
+
+	<div class="list">
+		<ul>
+			<% @genres.each do |genre| %>
+			  <li><%= link_to genre.name, genre_path(genre), :artist=>"artist" %></li>
+			<% end %>
+		</ul>
+
+		<p><a class="new_artist" href='/record_labels/new'>Add New Genre</a></p>
+	</div>
+
+	<section class="scroll-top-wrapper">
+		<span class="scroll-top-inner">
+			Top
+		</span>
+	</section>
+</section>

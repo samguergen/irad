@@ -43,10 +43,10 @@ header {
   height: 100%;
   margin-top: 9em;
   opacity: 0.8;
-    filter:alpha(opacity=80);
+  filter:alpha(opacity=80);
 }
 
-#title {
+.title {
   font-family: ubuntu;
   font-size: 4em;
   text-align: center;
@@ -302,7 +302,7 @@ h3 {
   margin-top: 1.3em;
 }
 
-#new_artist {
+.new_artist {
   color: rgb(65, 60, 60);
   background-color: yellow;
   font-family: ubuntu;
