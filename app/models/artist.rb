@@ -29,4 +29,13 @@ class Artist < ActiveRecord::Base
     "#{id}-#{stage_name.parameterize}"
   end
 
+  def birthday
+    unless date_of_birth == nil
+      date_of_birth.to_formatted_s(:long)
+    else
+      'none listed'
+    end
+
+  end
+
 end
