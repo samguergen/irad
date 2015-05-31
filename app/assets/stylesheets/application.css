@@ -1,15 +1,11 @@
 *= require bootstrap.min
 
 body {
-  background-color: rgb(176, 171, 171);
+  background-color: rgb(176, 171, 171) !important;
   margin: 0;
 }
 
-header {
-  position: fixed;
-  width: 100%;
-  margin-top: -8em;
-}
+
 
 #main_header {
   background-color: transparent;
@@ -19,7 +15,14 @@ header {
 #logo {
   height: 4em;
   position: relative;
-  top: -3em;
+  margin-top: -4em;
+}
+
+#main-ul {
+  float: right;
+  position: relative;
+  right: 0;
+  width: 50%;
 }
 
 
@@ -43,16 +46,17 @@ header {
   height: 100%;
   margin-top: 9em;
   opacity: 0.8;
-    filter:alpha(opacity=80);
+  filter:alpha(opacity=80);
 }
 
-#title {
+.title {
   font-family: ubuntu;
   font-size: 4em;
   text-align: center;
   background-color: yellow;
   width: 40%;
-  margin-left: 6em;
+  margin-left: auto;
+  margin-right: auto;
   color: rgb(65, 60, 60);
   margin-top: 2em;
   margin-bottom: 1.5em;
@@ -73,9 +77,6 @@ header {
 .banner {
   background-color: black;
   background-size: cover;
-  width: 100%;
-  height: 3em;
-  margin-bottom: -1em;
 }
 
 .main_banner {
@@ -157,7 +158,7 @@ header {
   background-color:rgba(0, 0, 0, 0.5);
 }
 
-#header_ul {
+.header_ul {
   color: white !important;
   font-family: ubuntu;
 }
@@ -301,7 +302,7 @@ h3 {
   margin-top: 1.3em;
 }
 
-#new_artist {
+.new_artist {
   color: rgb(65, 60, 60);
   background-color: yellow;
   font-family: ubuntu;
