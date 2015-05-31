@@ -1,0 +1,8 @@
+<%= render 'form' %>
+<h2>Search Results</h2>
+<h3>Artists</h3>
+<%= render partial: 'artist_result', collection: @artists %>
+<h3>Albums</h3>
+<%= render partial: 'album_result', collection: @albums %>
+<h3>Songs</h3>
+<%= render partial: 'song_result', collection: @songs %>

@@ -30,9 +30,12 @@
 		<!-- <h1 id="irad1">i</h1> -->
 		<h1 id="irad2" class="col-xm-3 col-xm-offset-6 col-sm-3 col-sm-offset-6"><span id="irad1">i</span><span id="rad">RAD</span></h1>
 	</div>
-	<!-- <form class="navbar-search" action="/search" method="GET">
-	  <input id="search_bar" type="text" class="search-query span4" placeholder="Search" name="search">
- </form> -->
+	<div class="col-xm-3 col-xm-offset-6 col-sm-3 col-sm-offset-6">
+	  <%= form_tag '/search/search', method: :get do %>
+	    <%= text_field_tag :q, '', placeholder:'Search term here' %>
+	    <%= submit_tag 'Search' %>
+	  <% end %>
+	</div>
 </div>
-	
+
 </body>
