@@ -1,0 +1,28 @@
+  [1m[36m (142.9ms)[0m  [1mDROP DATABASE IF EXISTS "iradonrails_test"[0m
+  [1m[35m (1527.1ms)[0m  CREATE DATABASE "iradonrails_test" ENCODING = 'unicode'
+  [1m[36mSQL (21.3ms)[0m  [1mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (56.5ms)[0m  CREATE TABLE "albums" ("id" serial primary key, "artist_id" integer NOT NULL, "title" character varying(256) NOT NULL, "release_year" character varying, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (14.3ms)[0m  [1mCREATE  INDEX  "index_albums_on_artist_id" ON "albums" USING btree ("artist_id")[0m
+  [1m[35m (2.7ms)[0m  CREATE TABLE "artist_genres" ("id" serial primary key, "artist_id" integer, "genre_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (1.2ms)[0m  [1mCREATE  INDEX  "index_artist_genres_on_artist_id" ON "artist_genres" USING btree ("artist_id")[0m
+  [1m[35m (27.0ms)[0m  CREATE  INDEX  "index_artist_genres_on_genre_id" ON "artist_genres" USING btree ("genre_id")
+  [1m[36m (3.6ms)[0m  [1mCREATE TABLE "artists" ("id" serial primary key, "record_label_id" integer, "stage_name" character varying NOT NULL, "birth_name" character varying, "age" integer NOT NULL, "description" text NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (3.1ms)[0m  CREATE TABLE "genres" ("id" serial primary key, "name" character varying(100) NOT NULL, "description" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (3.0ms)[0m  [1mCREATE TABLE "record_labels" ("id" serial primary key, "name" character varying NOT NULL, "founding_date" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) [0m
+  [1m[35m (5.0ms)[0m  CREATE TABLE "songs" ("id" serial primary key, "artist_id" integer NOT NULL, "album_id" integer NOT NULL, "title" character varying(256) NOT NULL, "lyrics" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL) 
+  [1m[36m (2.2ms)[0m  [1mCREATE  INDEX  "index_songs_on_album_id" ON "songs" USING btree ("album_id")[0m
+  [1m[35m (1.2ms)[0m  CREATE  INDEX  "index_songs_on_artist_id" ON "songs" USING btree ("artist_id")
+  [1m[36m (1.6ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL) [0m
+  [1m[35m (1.3ms)[0m  CREATE UNIQUE INDEX  "unique_schema_migrations" ON "schema_migrations"  ("version")
+  [1m[36m (0.3ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.5ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150526183303')
+  [1m[36m (0.4ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150523204825')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150524183936')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150524235616')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150525144038')
+  [1m[36m (0.3ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20150526001708')[0m
+  [1m[35m (0.3ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20150526164354')
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.1ms)[0m  [1mROLLBACK[0m

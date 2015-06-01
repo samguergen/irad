@@ -1,0 +1,5 @@
+<%= form_tag(artist_artist_genres_path, method: 'put') do %>
+  <%= label_tag(:genres) %>
+  <%= text_field_tag(:genres, artist.all_genres) %>
+  <%= submit_tag(:update) %>
+<% end %>

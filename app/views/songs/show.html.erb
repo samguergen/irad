@@ -1,0 +1,5 @@
+<h3><%= @song.title %></h3>
+by <%= @song.artist.stage_name %>
+<p>Lyrics</p>
+<p><%= @song.lyrics %></p>
+<%= link_to 'edit song', edit_artist_album_song_path %>

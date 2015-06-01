@@ -1,0 +1,7 @@
+<%= @album.title %>
+<%= @album.release_year %>
+<%= @album.description %>
+<h3>songs</h3>
+<% @album.songs.each do |song| %>
+  <p><%= link_to song.title, artist_album_song_path(song.artist, song.album, song) %></p>
+<% end %>

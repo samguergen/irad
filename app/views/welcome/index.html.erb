@@ -1,0 +1,41 @@
+<body id="logo_body">
+
+<header >
+	<nav id="main_header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="main_banner container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul  class="header_ul nav navbar-nav navbar-right">
+					<li class="main_ul"><a href='/about'>About</a></li>
+					<li class="main_ul"><a href='/artists'>Artists</a></li>
+					<li class="main_ul"><a href='/genres'>Genres</a></li>
+					<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+
+<div id="irad3">
+	<div class="row">
+		<!-- <h1 id="irad1">i</h1> -->
+		<h1 id="irad2" class="col-xm-3 col-xm-offset-6 col-sm-3 col-sm-offset-6"><span id="irad1">i</span><span id="rad">RAD</span></h1>
+	</div>
+	<div class="col-xm-3 col-xm-offset-6 col-sm-3 col-sm-offset-6">
+	  <%= form_tag '/search/search', method: :get do %>
+	    <%= text_field_tag :q, '', placeholder:'Search term here' %>
+	    <%= submit_tag 'Search' %>
+	  <% end %>
+	</div>
+</div>
+
+</body>

@@ -1,17 +1,26 @@
-source "http://rubygems.org/"
-
-gem 'sinatra'
+source 'https://rubygems.org'
+gem 'rails', '4.2.1'
 gem 'pg'
-gem 'activesupport'
-gem 'activerecord'
-gem 'rake'
+gem 'sass-rails', '~> 5.0'
+gem 'uglifier', '>= 1.3.0'
+gem 'coffee-rails', '~> 4.1.0'
+gem 'jquery-rails'
+gem 'jbuilder', '~> 2.0'
+gem 'sdoc', '~> 0.4.0', group: :doc
 
-group :test do
-    gem 'rspec'
-    gem 'rack-test'
-end
+gem 'bcrypt', '~> 3.1.7'
+gem 'unicorn'
+gem 'ransack'
 
-group :development do
-    gem 'shotgun'
+gem 'capistrano-rails', group: :development
+
+group :development, :test do
+  gem 'byebug'
+  gem 'web-console', '~> 2.0'
+  gem 'spring'
+  gem 'rspec-rails'
+  gem 'faker'
+  gem 'factory_girl_rails'
+  gem 'capybara'
 end
 

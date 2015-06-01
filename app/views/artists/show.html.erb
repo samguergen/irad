@@ -1,0 +1,9 @@
+<p>Stage Name: <%= @artist.stage_name %></p>
+<p>Birth Name: <%= @artist.birth_name %></p>
+<p>Age: <%= @artist.age %></p>
+<p>Genres:</p>
+<% @artist.genres.each do |genre| %>
+  <%= link_to genre.name, genre_path(genre) %>
+<% end %>
+<p>Description: <%= @artist.description %></p>
+<%= link_to 'edit', edit_artist_path %>

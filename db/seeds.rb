@@ -1,45 +1,55 @@
-types = { genre_1: {name: "Jazz"},
-           genre_2: {name: "Hip Hop"},
-           genre_3: {name: "Rock"},
-           genre_4: {name: "Country"}
-         }
+require 'faker'
 
-types.each do |key, value|
-  Genre.create!(value)
+10.times do
+  RecordLabel.create(name: "#{Faker::Company.name} Records", founding_date: "#{Faker::Date.backward(1000)}")
 end
 
-labels = { labe1_1: {name: "Universal Music Group", founding_date: "2000-03-20" },
-                  labe1_2: {name: "Warner Music Group", founding_date: "1970-03-22" },
-                  labe1_3: {name: "Independent UK", founding_date: "1990-04-14" },
-                  labe1_4: {name: "Huge Fake Label Music Group", founding_date: "1980-02-01" }
-}
-
-labels.each do |key, value|
-  RecordLabel.create!(value)
+10.times do
+  Genre.create(name: Faker::Commerce.department, description: Faker::Lorem.paragraph)
 end
 
-Artist.create!({moniker: "Frank Sinatra", age: 82, description: "Ol' Blue Eyes"})
-Artist.create!({moniker: "Lady Gaga", birth_name: "Stefani Joanne Angelina Germanotta", age: 28, description: "flamboyant and diverse contributions to the music industry via her fashion, live performances, and music videos"})
-Artist.create!({moniker: "Jay Z", birth_name: "Shawn Corey Carter", age:45, description: "One of the most financially successful hip-hop artists and entrepreneurs in America."})
-Artist.create!({moniker: "Katy Perry", birth_name: "Katheryn Elizabeth Hudson", age: 30, description: "Kim Jong Un's favorite artist."})
 
-albums = { album_1: {title: "Frank's Best", release_date: "1999-09-02", artist_id: 1},
-           album_2: {title: "Fame Monster", release_date: "2009-04-12", artist_id: 2},
-           album_3: {title: "Best of Jay Z", release_date: "2006-1-22", artist_id: 3},
-           album_4: {title: "Katy's Album", release_date: "2014-04-09", artist_id: 4}
-}
+artists = [
+  {stage_name: 'Jimi Hendrix', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Bob Dylan', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Elvis Prestley', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Kurt Cobain', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Mick Jagger', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Aretha Franklin', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'John Lennon', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Amy Winehouse', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Paul McCartney', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'David Lee Roth', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Lady Gaga', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Beyonce', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Elton John', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Justin Bieber', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Neil Young', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Bono', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Chris Martin', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Kanye West', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Buddy Guy', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Stevie Wonder', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Ozzy Ozbourne', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Chuck Berry', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Angus Young', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Justin Timberlake', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Prince', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Cher', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Rihanna', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Eddie Vedder', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) },
+  {stage_name: 'Brian Wilson', birth_name: "#{Faker::Name.first_name} #{Faker::Name.last_name}", age: rand(20..98), record_label: RecordLabel.all.sample, description: Faker::Lorem.paragraph(2) }
+]
 
-albums.each do |key, value|
-  Album.create!(value)
+artists.each do |artist_info|
+  artist = Artist.create(artist_info)
+  5.times do
+    album = artist.albums.create(title: Faker::Company.catch_phrase, release_year: "#{rand(1950..2015)}", description: Faker::Lorem.paragraph)
+    8.times do
+      album.songs.create(artist: artist, title: Faker::Company.bs, lyrics: Faker::Lorem.paragraph)
+    end
+  end
+  4.times do
+    artist.genres << Genre.all.sample
+  end
 end
-
-Genre.create!(name: "Pop")
-
-ArtistGenre.create!(artist_id: 1, genre_id: 1)
-ArtistGenre.create!(artist_id: 2, genre_id: 5)
-ArtistGenre.create!(artist_id: 3, genre_id: 2)
-ArtistGenre.create!(artist_id: 4, genre_id: 5)
-
-
-
-

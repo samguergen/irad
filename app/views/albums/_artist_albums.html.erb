@@ -1,0 +1,4 @@
+<h3>albums</h3>
+<% artist.albums.each do |album| %>
+  <p><%= album.title %> <%= link_to 'edit', edit_artist_album_path(artist, album) %></p>
+<% end %>
