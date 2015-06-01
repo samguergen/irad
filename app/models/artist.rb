@@ -31,10 +31,11 @@ class Artist < ActiveRecord::Base
 
   def birthday
     unless date_of_birth == nil
-      date_of_birth.strftime("%A, %B %d, %Y")
+      dob = date_of_birth.strftime("%A, %B %d, %Y")
     else
       'none listed'
     end
+
 
   end
 
