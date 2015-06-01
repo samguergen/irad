@@ -7,7 +7,8 @@ Rails.application.routes.draw do
     end
   end
 
-  resources :record_labels, path: 'recordlabels'
+  resources :record_labels, path: 'record_labels'
+
   resources :genres
 
   root to: 'welcome#index'
