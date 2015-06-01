@@ -44,4 +44,8 @@ class Artist < ActiveRecord::Base
       'none listed'
     end
   end
+
+  def display_birth_info
+    "#{birthday} (Age:#{calculate_age || "N/A"})"
+  end
 end
