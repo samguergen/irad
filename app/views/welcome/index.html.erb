@@ -3,7 +3,7 @@
 <style>
 
 #search_form {
-  margin-left: -50px;
+  margin-left: -80px;
 }
 
 </style>
@@ -43,7 +43,7 @@
 		<div id="search_form">
 		  <%= form_tag '/search/search', method: :get do %>
 		    <%= text_field_tag :q, '', placeholder:'Search term here' %>
-		    <br><%= submit_tag 'Search' %>
+		    <%= submit_tag 'Search' %>
 		  <% end %>
 		</div>
 	</div>
