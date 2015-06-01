@@ -2243,6 +2243,7 @@ pre code {
     margin-left: 0;
   }
 }
+
 table {
   background-color: transparent;
 }
@@ -5731,6 +5732,13 @@ button.close {
   -webkit-overflow-scrolling: touch;
   outline: 0;
 }
+
+.header_ul nav navbar-nav navbar-right {
+  margin-top: 50px;
+}
+
+
+
 .modal.fade .modal-dialog {
   -webkit-transition: -webkit-transform .3s ease-out;
        -o-transition:      -o-transform .3s ease-out;
