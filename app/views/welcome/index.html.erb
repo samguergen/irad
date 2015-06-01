@@ -1,5 +1,20 @@
 <body id="logo_body">
 
+<style>
+
+#search_form {
+  margin-left: -80px;
+}
+
+
+.main_ul {
+	text-shadow: -1px 0 black, 0 2px black, 1px 0 black, 0 -1px black;
+}
+
+
+
+</style>
+
 <header >
 	<nav id="main_header" class="navbar navbar-default navbar-fixed-top" role="navigation">
 		<div class="main_banner container-fluid">
@@ -30,12 +45,16 @@
 		<!-- <h1 id="irad1">i</h1> -->
 		<h1 id="irad2" class="col-xm-3 col-xm-offset-6 col-sm-3 col-sm-offset-6"><span id="irad1">i</span><span id="rad">RAD</span></h1>
 	</div>
+	<p>
 	<div class="col-xm-3 col-xm-offset-6 col-sm-3 col-sm-offset-6">
-	  <%= form_tag '/search/search', method: :get do %>
-	    <%= text_field_tag :q, '', placeholder:'Search term here' %>
-	    <%= submit_tag 'Search' %>
-	  <% end %>
+		<div id="search_form">
+		  <%= form_tag '/search/search', method: :get do %>
+		    <%= text_field_tag :q, '', placeholder:'Search term here' %>
+		    <%= submit_tag 'Search' %>
+		  <% end %>
+		</div>
 	</div>
+</p>
 </div>
 
 </body>

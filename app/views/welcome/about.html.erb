@@ -20,10 +20,6 @@ margin-top: -50px;
   margin-top: 10px;
 }
 
-.list {
-  margin-left: -750px;
-}
-
 </style>
 
 <section>
@@ -40,7 +36,6 @@ margin-top: -50px;
           </button>
         </div>
 
-        <DIV CLASS="nav_links">
         <div class="collapse navbar-collapse navbar-ex1-collapse">
           <ul id="main-ul"  class="header_ul nav navbar-nav navbar-right">
             <li class="main_ul"><a href='/about'>About</a></li>
@@ -49,23 +44,23 @@ margin-top: -50px;
             <li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
           </ul>
         </div>
-      </DIV>
       </div>
     </nav>
   </header>
 
   <div class="title">
-    <h1>Record Labels</h1>
+    <h1>About</h1>
   </div>
 
-  <div class="list">
-    <ul>
-      <% @record_labels.each do |label| %>
-        <p><%= link_to label.name, record_label_path(label) %></p>
-      <% end %>
-    </ul>
 
-    <p><a class="new_record_label" href='/record_labels/new'>Add New Record Label</a></p>
+  <div class="list">
+
+  <p>
+About IRAD:
+** ADD CONTENT HERE **
+</p>
+
+
   </div>
 
   <section class="scroll-top-wrapper">
