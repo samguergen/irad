@@ -29,14 +29,19 @@ class Artist < ActiveRecord::Base
     "#{id}-#{stage_name.parameterize}"
   end
 
+  def calculate_age
+    unless date_of_birth == nil
+      ave_seconds_in_a_year = 31536000
+      age_as_float = (Time.now - date_of_birth) / ave_seconds_in_a_year
+      age_as_float.floor
+    end
+  end
+
   def birthday
     unless date_of_birth == nil
       dob = date_of_birth.strftime("%A, %B %d, %Y")
     else
       'none listed'
     end
-
-
   end
-
 end
