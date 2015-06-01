@@ -31,7 +31,7 @@ class Artist < ActiveRecord::Base
 
   def birthday
     unless date_of_birth == nil
-      date_of_birth.to_formatted_s(:long)
+      date_of_birth.strftime("%A, %B %d, %Y")
     else
       'none listed'
     end
