@@ -12,7 +12,8 @@ class ArtistsController < ApplicationController
     if artist.save
       redirect_to artist_path(artist)
     else
-      redirect_to new_artist_path
+      @artist = artist
+      render 'new'
     end
   end
 
