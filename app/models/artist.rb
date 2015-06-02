@@ -6,6 +6,8 @@ class Artist < ActiveRecord::Base
   has_many :songs
 
   validates :stage_name, uniqueness: {case_sensitive: false}
+  validates :stage_name, :description, presence: true
+
 
   def all_genres
     if self.genres.count < 1
