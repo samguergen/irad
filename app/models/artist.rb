@@ -5,6 +5,8 @@ class Artist < ActiveRecord::Base
   has_many :genres, through: :artist_genres
   has_many :songs
 
+  validates :stage_name, uniqueness: {case_sensitive: false}
+
   def all_genres
     if self.genres.count < 1
       'add genres'
