@@ -1,10 +1,53 @@
-<p>Stage Name: <%= @artist.stage_name %></p>
-<p>Birth Name: <%= @artist.birth_name %></p>
-<p>Birthday: <%= @artist.display_birth_info %></p>
-<p>Genres:</p>
-<% @artist.genres.each do |genre| %>
-  <%= link_to genre.name, genre_path(genre) %>
-<% end %>
-<p>Description: <%= @artist.description %></p>
-<%= link_to 'edit artist', edit_artist_path %>
-<%= render 'albums_list' %>
+
+<body id="artist_body">
+
+<header >
+	<nav id="main_header" class="navbar navbar-default navbar-fixed-top" role="navigation">
+		<div class="main_banner container-fluid">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
+
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul  class="header_ul nav navbar-nav navbar-right">
+					<li class="main_ul"><a href='/about'>About</a></li>
+					<li class="main_ul"><a href='/artists'>Artists</a></li>
+					<li class="main_ul"><a href='/genres'>Genres</a></li>
+					<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
+
+	<div>
+		<h1 id="title">Stage Name: <%= @artist.stage_name %></h1>
+	</div>
+
+	<div class="rating">
+		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+	</div>
+
+	<div id="artist_img">
+		<img id="profile" src="/blank_avatar.png" alt="artist_avatar" style="width:20em;height:22em">
+	</div>
+
+	<div class="bio">
+		<ul>
+			<li>Birth Name: <%= @artist.birth_name %></li>
+			<li>Birthday: <%= @artist.display_birth_info %></li>
+			<li>Genres:</li>
+			<% @artist.genres.each do |genre| %>
+			  <%= link_to genre.name, genre_path(genre) %>
+			<% end %>
+			<li>Description: <%= @artist.description %></li>
+		</ul>
+		<%= link_to 'edit artist', edit_artist_path %>
+		<%= render 'albums_list' %>
+	</div>
+</body>
