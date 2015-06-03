@@ -20,7 +20,7 @@
 					</ul>
 				</div>
 			</div>
-		</nav>	
+		</nav>
 	</header>
 
 
@@ -36,9 +36,13 @@
 		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
 	</div>
 
-		<div id="artist_img">
-			<img id="profile" src="/blank_avatar.png" alt="artist_avatar" style="width:20em;height:22em">
-		</div>
+	<div id="artist_img">
+		<% if @artist.avatar.url == "/images/original/missing.png" %>
+			<%= image_tag "blank_avatar.png", id:"profile", alt: "artist avatar", style: "width:20em;height:22em" %>
+		<% else %>
+			<%= image_tag @artist.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
+		<%end %>
+	</div>
 
 	<div class="bio">
 		<ul>
@@ -55,5 +59,5 @@
 	<p>	<%= link_to 'Edit Artist', edit_artist_path, :class => 'new_artist bio_edit' %></p>
 
 		<%= render 'albums_list' %>
-	
+
 </body>
