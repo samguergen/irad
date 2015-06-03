@@ -42,6 +42,7 @@ class ArtistsController < ApplicationController
 
   def artist_params
     params.require(:artist).permit(
+      :avatar,
       :stage_name,
       :birth_name,
       :date_of_birth,
