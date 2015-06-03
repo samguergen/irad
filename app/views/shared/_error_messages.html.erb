@@ -1,6 +1,6 @@
 <% if target.errors.any? %>
 <div id="error-explanation">
-  <h2><%= pluralize(target.errors.count, "error") %> record could not be saved:</h2>
+  <h3><%= pluralize(target.errors.count, "error") %></h3>
   <ul>
   <% target.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
