@@ -16,7 +16,8 @@ class AlbumsController < ApplicationController
     if album.save
       redirect_to artist_album_path(artist, album)
     else
-      redirect_to new_artist_album_path(artist, album)
+      @album = album
+      render 'new'
     end
   end
 

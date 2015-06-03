@@ -1,3 +1,4 @@
+<%= render 'shared/error_messages', target: @song %>
 <%= form_for @song, url: {action: 'create'} do |f| %>
   <%= f.label :title %>
   <%= f.text_field :title %>

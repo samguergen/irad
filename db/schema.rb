@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20150526183303) do
     t.integer  "record_label_id"
     t.string   "stage_name",      null: false
     t.string   "birth_name"
-    t.integer  "age",             null: false
+    t.datetime "date_of_birth"
     t.text     "description",     null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false

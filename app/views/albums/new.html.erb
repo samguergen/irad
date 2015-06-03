@@ -1,4 +1,5 @@
 <%= form_for @album, url: {action: "create"} do |f| %>
+  <%= render 'shared/error_messages', target: @album %>
   <%= f.label :title %>
   <%= f.text_field :title %>
   <%= f.label 'year released' %>
