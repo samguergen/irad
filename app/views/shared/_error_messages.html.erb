@@ -1,6 +1,6 @@
 <% if target.errors.any? %>
 <div id="error-explanation">
-  <h3><%= pluralize(target.errors.count, "error") %></h3>
+  <h4><%= pluralize(target.errors.count, "Error:") %></h4>
   <ul>
   <% target.errors.full_messages.each do |msg| %>
     <li><%= msg %></li>
