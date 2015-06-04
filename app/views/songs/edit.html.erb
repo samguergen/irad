@@ -1,8 +1,23 @@
-<%= form_for @song, url:{action: "update"} do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title %>
-  <%= f.label :lyrics %>
-  <%= f.text_field :lyrics %>
-  <%= f.submit %>
-<% end %>
+<div class = "container">
+  <%= form_for @song, url: {action: 'update'}, html: {class: "form-horizontal"} do |f| %>
+    <%= render 'shared/error_messages', target: @song %>
+    <div class = "form-group">
+      <%= f.label :title, class: "col-sm-2 control-label" %>
+      <div class = "col-sm-3">
+        <%= f.text_field :title, class: "form-control", required: true %>
+      </div>
+    </div>
+    <div class = "form-group">
+      <%= f.label :lyrics, class: "col-sm-2 control-label" %>
+      <div class = "col-sm-5">
+        <%= f.text_area :lyrics, class: "form-control", required: true, rows: 15 %>
+      </div>
+    </div>
+    <div class = "form-group">
+      <div class = "col-sm-offset-2 col-sm-8">
+        <%= f.submit %>
+      </div>
+    </div>
+  <% end %>
+</div>
 <%= link_to 'Delete Song', artist_album_song_path, method: :delete %>
