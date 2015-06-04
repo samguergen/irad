@@ -468,3 +468,18 @@ h4 {
 .scroll-top-wrapper i.fa {
   line-height: inherit;
 }
+
+#error-explanation {
+  margin: 5px;
+  border: 2px solid red;
+  background: white;
+  width: 50%;
+}
+
+#error-explanation h4 {
+  margin-left: 2em;
+}
+
+#error-explanation li {
+  color: black;
+}
