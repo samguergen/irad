@@ -5,6 +5,16 @@ class Artist < ActiveRecord::Base
   has_many :genres, through: :artist_genres
   has_many :songs
 
+  has_attached_file :avatar, styles: {
+    medium: "300x300>",
+    thumb: "100x100>" },
+    default_url: "/images/:style/missing.png"
+  validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
+
+  validates :stage_name, uniqueness: {case_sensitive: false}
+  validates :stage_name, :description, presence: true
+
+
   def all_genres
     if self.genres.count < 1
       'add genres'
@@ -29,4 +39,23 @@ class Artist < ActiveRecord::Base
     "#{id}-#{stage_name.parameterize}"
   end
 
+  def calculate_age
+    unless date_of_birth == nil
+      ave_seconds_in_a_year = 31536000
+      age_as_float = (Time.now - date_of_birth) / ave_seconds_in_a_year
+      age_as_float.floor
+    end
+  end
+
+  def birthday
+    unless date_of_birth == nil
+      dob = date_of_birth.strftime("%A, %B %d, %Y")
+    else
+      'none listed'
+    end
+  end
+
+  def display_birth_info
+    "#{birthday} (Age:#{calculate_age || "N/A"})"
+  end
 end

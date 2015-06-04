@@ -1,9 +1,63 @@
-<p>Stage Name: <%= @artist.stage_name %></p>
-<p>Birth Name: <%= @artist.birth_name %></p>
-<p>Age: <%= @artist.age %></p>
-<p>Genres:</p>
-<% @artist.genres.each do |genre| %>
-  <%= link_to genre.name, genre_path(genre) %>
-<% end %>
-<p>Description: <%= @artist.description %></p>
-<%= link_to 'edit', edit_artist_path %>
+<header>
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="banner container-fluid">
+				<div class="navbar-header">
+					<a href="/" class='navbar-brand'><%= link_to image_tag("irad_logo.png", :id=>'logo') %></a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul id="main-ul"  class="header_ul nav navbar-nav navbar-right">
+						<li class="main_ul"><a href='/about'>About</a></li>
+						<li class="main_ul"><a href='/artists'>Artists</a></li>
+						<li class="main_ul"><a href='/genres'>Genres</a></li>
+						<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
+
+
+<body id="artist_body">
+
+
+
+	<div>
+		<h1 class="title"><%= @artist.stage_name %></h1>
+	</div>
+
+	<div class="rating">
+		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
+	</div>
+
+	<div id="artist_img">
+		<% if @artist.avatar.url == "/images/original/missing.png" %>
+			<%= image_tag "blank_avatar.png", id:"profile", alt: "artist avatar", style: "width:20em;height:22em" %>
+		<% else %>
+			<%= image_tag @artist.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
+		<%end %>
+	</div>
+
+	<div class="bio">
+		<ul>
+			<li><em>Birth Name:</em> <%= @artist.birth_name %></li>
+			<li><em>Birthday:</em> <%= @artist.display_birth_info %></li>
+			<li><em>Genres:</em>
+			<% @artist.genres.each do |genre| %>
+			  <%= link_to genre.name, genre_path(genre) %>
+			<% end %></li>
+			<li><em>Description:</em> <%= @artist.description %></li>
+		</ul>
+	</div>
+
+	<p>	<%= link_to 'Edit Artist', edit_artist_path, :class => 'new_artist bio_edit' %></p>
+
+		<%= render 'albums_list' %>
+
+</body>

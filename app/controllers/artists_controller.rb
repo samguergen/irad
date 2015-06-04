@@ -12,7 +12,8 @@ class ArtistsController < ApplicationController
     if artist.save
       redirect_to artist_path(artist)
     else
-      redirect_to new_artist_path
+      @artist = artist
+      render 'new'
     end
   end
 
@@ -39,11 +40,14 @@ class ArtistsController < ApplicationController
     redirect_to artists_path
   end
 
+  private
+
   def artist_params
     params.require(:artist).permit(
+      :avatar,
       :stage_name,
       :birth_name,
-      :age,
+      :date_of_birth,
       :description)
   end
 end

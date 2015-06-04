@@ -17,7 +17,8 @@ class GenresController < ApplicationController
     if genre.save
       redirect_to genre_path(genre)
     else
-      redirect_to new_genre_path
+      @genre = genre
+      render 'new'
     end
   end
 

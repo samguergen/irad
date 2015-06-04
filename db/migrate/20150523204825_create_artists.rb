@@ -4,7 +4,7 @@ class CreateArtists < ActiveRecord::Migration
       t.references :record_label
       t.string :stage_name, null: false
       t.string :birth_name
-      t.integer :age, null: false
+      t.datetime :date_of_birth
       t.text :description, null: false
 
       t.timestamps null: false

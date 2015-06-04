@@ -17,7 +17,8 @@ class RecordLabelsController < ApplicationController
     if record_label.save
       redirect_to record_label_path(record_label)
     else
-      redirect_to new_record_label_path
+      @record_label = record_label
+      render 'new'
     end
   end
 

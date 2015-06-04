@@ -5,3 +5,4 @@
 <% @album.songs.each do |song| %>
   <p><%= link_to song.title, artist_album_song_path(song.artist, song.album, song) %></p>
 <% end %>
+<%= link_to 'edit album', edit_artist_album_path(@album.artist, @album) %>
