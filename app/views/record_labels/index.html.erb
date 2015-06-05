@@ -1,3 +1,11 @@
-<% @record_labels.each do |label| %>
-  <p><%= link_to label.name, record_label_path(label) %></p>
-<% end %>
+<div class="title">
+  <h1>Record Labels</h1>
+</div>
+
+<div class="list">
+  <ul>
+    <% @record_labels.each do |label| %>
+      <li><%= link_to label.name, record_label_path(label), class: "artist" %></li>
+    <% end %>
+  </ul>
+</div>
