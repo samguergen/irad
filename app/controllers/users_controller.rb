@@ -1,73 +1,81 @@
 class UsersController < ApplicationController
+
   def index
+    if params[:search]
+      @users = User.search(params[:search]).order("created_at DESC")
+    else
+      @users = User.order("created_at DESC")
+    end
     
-    @user = User.new
-    
+      @all_users = User.all
   end
 
-  def show
-    
+  def new_login
+    @the_user = User.find_by(email: params[:email])
+    if @the_user.try(:authenticate, params[:password])
+      session[:user_id] = @the_user.id
+      redirect_to questions_path
+    else
+      flash.now[:danger] = "Invalid email/password combination"
+      redirect_to login_users_path
+    end
   end
-
-  def all
-    @users = User.all
-  end
-
-  
 
   def edit
-    @user = current_user
+    @user = User.find(params[:id])
   end
 
   def update
-    user = current_user
-    if user.update(user_edit_params)
-     redirect_to user_path(current_user.id)
-   else
-    [404, "The Page cannot be retrived"]
-   end
+    @user = User.find(params[:id])
+    @user.update_attributes(user_params)
+    if @user.save!
+      redirect_to user_path(@user)
+    else
+      flash[:notice] = "A problem occurred: your profile couldn't be updated."
+      redirect_to user_path(@user)
+    end
   end
+
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy!
+    redirect_to questions_path
+  end
+
 
   def new
     @user = User.new
   end
 
   def create
-   user = User.new(user_params)
+    user = User.new(user_params)
 
-   if user.save
-    session[:user_id] = user.id
-    redirect_to '/'
-  else
-    redirect_to '/'
-  end
-  end
-
-  
-
-  def signinpost
-    c_user = User.find_by(email: params[:user][:email])
-    if c_user && c_user.authenticate(params[:user][:password])
-      session[:user_id] = c_user.id
-      redirect_to '/'
+    if (user.save)
+      flash[:notice] = "Account registered!"
+      session[:user_id] = user.id
+      redirect_to root_path
     else
-      redirect_to '/'
+      render :action => :new
     end
   end
 
-  def signout
-    session[:user_id] = nil
-    redirect_to '/'
+
+  def show
+      @user = User.find(params[:id])
+  end
+
+
+
+  def logout
+      session[:user_id] = nil
+      redirect_to login_users_path
   end
 
 
   private
   def user_params
-    params.require(:user).permit(:username, :email, :password)
+    params.require(:user).permit(:username, :email, :password, :password_confirmation, :url)
   end
 
-  def user_edit_params
-    params.require(:user).permit(:username, :email)
-  end
-  
+
 end
