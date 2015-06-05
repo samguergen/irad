@@ -1,6 +1,9 @@
-<h3>All Albums</h3>
+<div class = "container">
+  <h4><%= @artist.stage_name %> Albums</h4>
   <ul>
-  <% @artist.albums.each do |album| %>
-    <li><%= link_to album.title, artist_album_path(@artist, album) %></li>
-  <% end %>
+    <% @artist.albums.each do |album| %>
+      <li><%= link_to album.title, artist_album_path(@artist, album) %></li>
+    <% end %>
   </ul>
+  <%= link_to 'add an album', new_artist_album_path(@artist) %>
+</div>
