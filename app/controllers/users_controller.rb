@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-# SAM WORKS FROM THIS LINE TO LINE 49
 
   def index
     if params[:search]
