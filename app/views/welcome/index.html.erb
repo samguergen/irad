@@ -14,17 +14,18 @@
 
 			<div class="collapse navbar-collapse navbar-ex1-collapse">
 				<ul  class="header_ul nav navbar-nav navbar-right">
+					
+					<li><%= link_to "About", welcome_about_path, class: "main_ul" %></li>
+					<li class="main_ul"><a href='/artists'>Artists</a></li>
+					<li class="main_ul"><a href='/genres'>Genres</a></li>
+					<li class="main_ul"><a href='/recordlabels'>Record Labels</a></li>
 					<% if session[:user_id] %>
 						<li class='top_header'> <%= link_to current_user.username, user_path(current_user), :class=> 'top_link'  %></li>
 						<li class='top_header'><%= link_to 'Logout', logout_users_path, :class=> 'top_link' %></a></li>
 					<% else %>
 						<li class='top_header'> <%=link_to 'Sign Up', new_user_path, :class=> 'top_link'%></li>
-						<li class='top_header'> <%= link_to 'Login', login_users_path, :class=> 'top_link' %></li>
+						<li class='top_header'> <%= link_to 'Log in', login_users_path, :class=> 'top_link' %></li>
 					<%end%>
-					<li><%= link_to "About", welcome_about_path, class: "main_ul" %></li>
-					<li class="main_ul"><a href='/artists'>Artists</a></li>
-					<li class="main_ul"><a href='/genres'>Genres</a></li>
-					<li class="main_ul"><a href='/recordlabels'>Record Labels</a></li>
 				</ul>
 			</div>
 		</div>
@@ -36,6 +37,7 @@
 	<div class="row">
 		<!-- <h1 id="irad1">i</h1> -->
 		<h1 id="irad2"><span id="irad1">i</span><span id="rad">RAD</span></h1>
+		<i class="fa fa-user"></i>
 	</div>
 
 	<div class="search-">
