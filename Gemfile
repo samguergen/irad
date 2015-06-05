@@ -13,6 +13,8 @@ gem 'unicorn'
 gem 'ransack'
 gem 'paperclip', '~> 4.2'
 
+gem "font-awesome-rails"
+
 gem 'capistrano-rails', group: :development
 
 group :development, :test do
@@ -24,4 +26,5 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'capybara'
 end
+
 
