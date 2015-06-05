@@ -13,10 +13,10 @@
 
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul id="main-ul"  class="header_ul nav navbar-nav navbar-right">
-						<li class="main_ul"><a href='/about'>About</a></li>
+						<li><%= link_to "About", welcome_about_path, class: "main_ul" %></li>
 						<li class="main_ul"><a href='/artists'>Artists</a></li>
 						<li class="main_ul"><a href='/genres'>Genres</a></li>
-						<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+						<li class="main_ul"><a href='/recordlabels'>Record Labels</a></li>
 					</ul>
 				</div>
 			</div>
@@ -58,6 +58,6 @@
 
 	<p>	<%= link_to 'Edit Artist', edit_artist_path, :class => 'new_artist bio_edit' %></p>
 
-		<%= render 'albums_list' %>
+<%= render 'albums_list' %>
 
 </body>

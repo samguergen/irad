@@ -3,3 +3,4 @@ by <%= @song.artist.stage_name %>
 <p>Lyrics</p>
 <p><%= @song.lyrics %></p>
 <%= link_to 'edit song', edit_artist_album_song_path %>
+<%= link_to 'back to album', artist_album_path(@song.artist, @song.album) %>
