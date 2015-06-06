@@ -1,10 +1,18 @@
 <body id = "artist_body">
 
-  <div class = "title">
-    <h1><%= @record_label.name %></h1>
+  <div class = "container">
+    <div class = "title">
+      <h1><%= @record_label.name %></h1>
+    </div>
+    <p class = "title_sub_heading">
+      <% if @record_label.founding_date %>
+        <%= @record_label.display_founding_date %>
+      <% else %>
+        <%= link_to "Add a founding date", edit_record_label_path %>
+      <% end %>
+    </p>
   </div>
 
-  <p>founding date: <%= @record_label.founding_date %></p>
   <h3>Artists on <%= @record_label.name %></h3>
   <% @record_label.artists.each do |artist| %>
     <li> <%= link_to artist.stage_name, artist_path(artist) %> </li>
