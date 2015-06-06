@@ -330,6 +330,11 @@ h3 {
   color: white;
 }
 
+.navigate_link{
+  font-family: ubuntu;
+  margin: 1em;
+}
+
 .add_new{
   margin-right: 10em;
   margin-top: -1em;
