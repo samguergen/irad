@@ -363,6 +363,16 @@ div p {
   margin-left: 39.3em;
 }
 
+.description {
+  font-family: ubuntu;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: 1px;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
 em {
   color: black;
 }
