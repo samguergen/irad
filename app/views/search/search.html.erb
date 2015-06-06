@@ -8,10 +8,13 @@
   <div class = "list">
     <ul>
     <h1>Artists</h1>
+      <%= "No artists found" if (@artists.size < 1) %>
       <%= render partial: 'artist_result', collection: @artists %>
     <h1>Albums</h1>
       <%= render partial: 'album_result', collection: @albums %>
+      <%= "No albums found" if (@albums.size < 1) %>
     <h1>Songs</h1>
+      <%= "No songs found" if (@songs.size < 1) %>
       <%= render partial: 'song_result', collection: @songs %>
     </ul>
   </div>
