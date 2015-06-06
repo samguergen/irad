@@ -1,6 +1,14 @@
-<div>
-  <%= form_tag '/search/search', method: :get do %>
-    <%= text_field_tag :q, '', placeholder:'Search term here' %>
-    <%= submit_tag 'Search' %>
-  <% end %>
+<div class = "container">
+  <div class = "row">
+    <div class = "col-lg-4 col-lg-offset-4">
+      <%= form_tag '/search/search', method: :get do %>
+      <div class = "input-group">
+        <%= text_field_tag :q, '', placeholder:'Search term here', class: "form-control" %>
+          <span class="input-group-btn">
+            <%= button_tag "Search", class: "btn btn-default" %>
+          </span>
+      </div>
+    </div>
+  </div>
+      <% end %>
 </div>
