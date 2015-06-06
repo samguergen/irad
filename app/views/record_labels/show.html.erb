@@ -11,13 +11,22 @@
         <%= link_to "Add a founding date", edit_record_label_path %>
       <% end %>
     </p>
+
+  <div class = "bio">
+    <h3>Artists on <%= @record_label.name %></h3>
+    <% if @record_label.artists.size < 1 %>
+      <%= link_to 'Add Artists', edit_record_label_path %>
+    <% else %>
+      <ul>
+      <% @record_label.artists.each do |artist| %>
+        <li><%= link_to artist.stage_name, artist_path(artist) %></li>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <%= link_to 'edit record label', edit_record_label_path %>
+    <%= link_to 'back to all labels', record_labels_path %>
   </div>
 
-  <h3>Artists on <%= @record_label.name %></h3>
-  <% @record_label.artists.each do |artist| %>
-    <li> <%= link_to artist.stage_name, artist_path(artist) %> </li>
-  <% end %>
-  <%= link_to 'edit record label', edit_record_label_path %>
-  <%= link_to 'back to all labels', record_labels_path %>
-
+  </div>
 </body>
