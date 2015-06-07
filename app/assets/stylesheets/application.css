@@ -90,13 +90,14 @@ body {
   font-size: 16px;
 }
 
-#edit_title {
+.edit_title {
   font-family: ubuntu;
   font-size: 2em;
   text-align: center;
   background-color: yellow;
   width: 40%;
-  margin-left: 9em;
+  margin-left: auto;
+  margin-right: auto;
   color: rgb(65, 60, 60);
   /*margin-top: 4em;*/
   margin-bottom: 1em;
@@ -130,7 +131,6 @@ body {
 }
 
 
-
 .search {
   margin-top: 2.4em;
   width: 24em;
@@ -139,6 +139,7 @@ body {
   font-family: ubuntu;
   height: 2em;
   color: yellow;
+  outline: none;
 }
 
 .search-button {
@@ -248,7 +249,7 @@ header ul li a:hover {
 }
 
 p {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
 }
 
 .edit_section {
@@ -270,7 +271,7 @@ p {
 .list {
   color: black;
   font-family: ubuntu;
-  font-size: 2em;
+  font-size: 1.4em;
   margin-left: 2em;
   transition: .4s ease-in-out;
   text-decoration: none;
@@ -292,7 +293,6 @@ p {
   margin-bottom: 1em;
   list-style-type: none;
   text-decoration: none;
-
 }
 
 .list:visited {
@@ -312,12 +312,12 @@ ul a {
 
 
 h2 {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   margin-left: 23.7em;
 }
 
 h3 {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   margin-bottom: -.01em;
   font-size: 1.2em;
 }
@@ -327,14 +327,14 @@ h3 {
 }
 
 .edit_option {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   border-color: white;
   border-style: solid;
   font-size: .8em;
 }
 
 #search_bar {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   border-color: white;
   border-style: solid;
   font-size: 1.3em;
@@ -382,7 +382,8 @@ h3 {
 
 .new_artist_link:hover {
   background-color: rgba(0,0,0,.4);
-  color: white;
+  color: yellow;
+  text-decoration: none;
 }
 
 .navigate_link{
@@ -401,13 +402,27 @@ div p {
 }
 
 .bio {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   list-style-type: none;
   font-size: 1.3em;
   float: right;
-  width: 50%;
   text-align: center;
-  margin-right: 14.7em;
+  background: black;
+  color: yellow;
+  padding: 2em;
+}
+
+.bio_item {
+  color: yellow !important;
+}
+
+.bio_item a{
+  color: yellow;
+}
+
+.bio_item a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 #bio_delete {
@@ -429,12 +444,14 @@ div p {
 }
 
 em {
-  color: black;
+  color: white;
+  font-family: ubuntu;
 }
 
 #artist_img {
   background-color: rgba(0, 0, 0, 0.06);
-
+  text-align: center;
+  padding: 2em;
 }
 
 .label_artist {
@@ -459,7 +476,6 @@ div ul li {
 }
 
 #profile {
-  margin-left: 31em;
   border-style: solid;
   border-width: .7em;
   border-color: gray;

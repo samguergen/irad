@@ -13,15 +13,6 @@
 
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
 					<ul id="main-ul"  class="header_ul nav navbar-nav navbar-right">
-						<% if session[:user_id] %>
-							<li class='top_header'> <%= link_to current_user.username, user_path(current_user), :class=> 'top_link'  %></li>
-							<li class='top_header'><%= link_to 'logout', logout_users_path, :class=> 'top_link' %></a></li>
-						<% else %>
-							<li class='top_header'> <%=link_to 'sign up', new_user_path, :class=> 'top_link'%></li>
-							<li class='top_header'> <%= link_to 'login', login_users_path, :class=> 'top_link' %></li>
-						<%end%>
-
-
 						<li><%= link_to "About", welcome_about_path, class: "main_ul" %></li>
 						<li class="main_ul"><a href='/artists'>Artists</a></li>
 						<li class="main_ul"><a href='/genres'>Genres</a></li>
@@ -41,9 +32,6 @@
 		<h1 class="title"><%= @artist.stage_name %></h1>
 	</div>
 
-	<div class="rating">
-		<span>☆</span><span>☆</span><span>☆</span><span>☆</span><span>☆</span>
-	</div>
 
 	<div id="artist_img">
 		<% if @artist.avatar.url == "/images/original/missing.png" %>
@@ -54,14 +42,14 @@
 	</div>
 
 	<div class="bio">
-		<ul>
-			<li><em>Birth Name:</em> <%= @artist.birth_name %></li>
-			<li><em>Birthday:</em> <%= @artist.display_birth_info %></li>
-			<li><em>Genres:</em>
+		<ul id="bio_list">
+			<li class="bio_item"><em>Birth Name: </em> <%= @artist.birth_name %></li>
+			<li class="bio_item"><em>Birthday: </em>  <%= @artist.display_birth_info %></li>
+			<li class="bio_item"><em>Genres: </em>
 			<% @artist.genres.each do |genre| %>
 			  <%= link_to genre.name, genre_path(genre) %>
 			<% end %></li>
-			<li><em>Description:</em> <%= @artist.description %></li>
+			<li class="bio_item"><em>Description: </em> <%= @artist.description %></li>
 		</ul>
 	</div>
 
