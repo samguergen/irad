@@ -249,7 +249,7 @@ header ul li a:hover {
 }
 
 p {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
 }
 
 .edit_section {
@@ -312,12 +312,12 @@ ul a {
 
 
 h2 {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   margin-left: 23.7em;
 }
 
 h3 {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   margin-bottom: -.01em;
   font-size: 1.2em;
 }
@@ -327,14 +327,14 @@ h3 {
 }
 
 .edit_option {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   border-color: white;
   border-style: solid;
   font-size: .8em;
 }
 
 #search_bar {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   border-color: white;
   border-style: solid;
   font-size: 1.3em;
@@ -402,13 +402,27 @@ div p {
 }
 
 .bio {
-  font-family: lato;
+  font-family: 'Lato', sans-serif;
   list-style-type: none;
   font-size: 1.3em;
   float: right;
-  width: 50%;
   text-align: center;
-  margin-right: 14.7em;
+  background: black;
+  color: yellow;
+  padding: 2em;
+}
+
+.bio_item {
+  color: yellow !important;
+}
+
+.bio_item a{
+  color: yellow;
+}
+
+.bio_item a:hover {
+  text-decoration: none;
+  color: white;
 }
 
 #bio_delete {
@@ -430,12 +444,14 @@ div p {
 }
 
 em {
-  color: black;
+  color: white;
+  font-family: ubuntu;
 }
 
 #artist_img {
   background-color: rgba(0, 0, 0, 0.06);
-
+  text-align: center;
+  padding: 2em;
 }
 
 .label_artist {
@@ -460,7 +476,6 @@ div ul li {
 }
 
 #profile {
-  margin-left: 31em;
   border-style: solid;
   border-width: .7em;
   border-color: gray;
