@@ -28,17 +28,17 @@
 
 
 
-	<div>
+	<div class="artist_top">
 		<h1 class="title"><%= @artist.stage_name %></h1>
-	</div>
 
 
-	<div id="artist_img">
-		<% if @artist.avatar.url == "/images/original/missing.png" %>
-			<%= image_tag "blank_avatar.png", id:"profile", alt: "artist avatar", style: "width:20em;height:22em" %>
-		<% else %>
-			<%= image_tag @artist.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
-		<%end %>
+		<div id="artist_img">
+			<% if @artist.avatar.url == "/images/original/missing.png" %>
+				<%= image_tag "blank_avatar.png", id:"profile", alt: "artist avatar", style: "width:20em;height:22em" %>
+			<% else %>
+				<%= image_tag @artist.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
+			<%end %>
+		</div>
 	</div>
 
 	<div class="bio">
@@ -51,9 +51,9 @@
 			<% end %></li>
 			<li class="bio_item"><em>Description: </em> <%= @artist.description %></li>
 		</ul>
+	<p>	<%= link_to 'Edit Artist', edit_artist_path, :class => 'new_artist_link', :id=>'edit_artist' %></p>
 	</div>
 
-	<p>	<%= link_to 'Edit Artist', edit_artist_path, :class => 'new_artist bio_edit' %></p>
 
 <%= render 'albums_list' %>
 
