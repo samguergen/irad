@@ -1,2 +1,9 @@
+<div id = "edit_title">
+Edit <%= @record_label.name %>
+</div>
 <%= render 'form' %>
-<%= link_to "Delete Record Label", record_label_path(@record_label), method: :delete %>
+  <div class="container">
+    <div class = "delete_entry">
+      <%= link_to "Delete Record Label", record_label_path(@record_label), method: :delete %>
+    </div>
+  </div>

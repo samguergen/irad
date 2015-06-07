@@ -62,16 +62,24 @@ body {
   margin-bottom: 1.5em;
 }
 
+.title_sub_heading {
+  margin-top: -4em;
+  margin-bottom: 1em;
+  display: block;
+  font-family: ubuntu;
+  font-size: 16px;
+}
+
 #edit_title {
   font-family: ubuntu;
   font-size: 2em;
   text-align: center;
   background-color: yellow;
   width: 40%;
-  margin-left: 11em;
+  margin-left: 9em;
   color: rgb(65, 60, 60);
-  margin-top: 4em;
-  margin-bottom: -1.5em;
+  /*margin-top: 4em;*/
+  margin-bottom: 1em;
 }
 
 .banner {
@@ -246,10 +254,6 @@ ul a {
 
 }
 
-#form.input {
-
-}
-
 h2 {
   font-family: lato;
   margin-left: 23.7em;
@@ -323,6 +327,11 @@ h3 {
   color: white;
 }
 
+.navigate_link{
+  font-family: ubuntu;
+  margin: 1em;
+}
+
 .add_new{
   margin-right: 10em;
   margin-top: -1em;
@@ -351,6 +360,16 @@ div p {
   margin-left: 39.3em;
 }
 
+.description {
+  font-family: ubuntu;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  text-align: center;
+  padding: 1px;
+  background-color: rgba(0, 0, 0, 0.06);
+}
+
 em {
   color: black;
 }
@@ -360,6 +379,20 @@ em {
 
 }
 
+.label_artist {
+  background-color: rgba(0, 5, 4, 0.2);
+  font-size: 16px;
+  width: 20%;
+  margin-left: auto;
+  margin-right: 42%;
+}
+
+.delete_entry a {
+  position: relative;
+  left: 17%;
+  color: black;
+  font-size:12px;
+}
 
 div ul li {
   list-style-type: none;

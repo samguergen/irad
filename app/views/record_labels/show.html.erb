@@ -1,9 +1,38 @@
-<p>label name: <%= @record_label.name %></p>
-<p>founding date: <%= @record_label.founding_date %></p>
-<h3>Artists on <%= @record_label.name %></h3>
-<% @record_label.artists.each do |artist| %>
-  <li> <%= link_to artist.stage_name, artist_path(artist) %> </li>
-<% end %>
-<%= link_to 'edit record label', edit_record_label_path %>
-<%= link_to 'back to all labels', record_labels_path %>
+<body id = "artist_body">
 
+  <div class = "container">
+    <div class = "title">
+      <h1><%= @record_label.name %></h1>
+    </div>
+    <p class = "title_sub_heading">
+      <% if @record_label.founding_date %>
+        <%= @record_label.display_founding_date %>
+      <% else %>
+        <%= link_to "Add a founding date", edit_record_label_path %>
+      <% end %>
+    </p>
+
+  <div class = "description">
+    <h3>Artists on <%= @record_label.name %></h3>
+    <% if @record_label.artists.size < 1 %>
+      <%= link_to 'Add Artists', edit_record_label_path, class: "new_artist_link" %>
+    <% else %>
+      <ul>
+      <% @record_label.artists.each do |artist| %>
+        <div class = "label_artist">
+          <li><%= link_to artist.stage_name, artist_path(artist) %></li>
+        </div>
+      <% end %>
+      </ul>
+    <% end %>
+
+    <div class = "navigate_link">
+      <%= link_to 'edit record label', edit_record_label_path %>
+    </div>
+    <div class = "navigate_link">
+      <%= link_to 'back to all labels', record_labels_path %>
+    </div>
+  </div>
+
+  </div>
+</body>
