@@ -19,7 +19,9 @@
     <% else %>
       <ul>
       <% @record_label.artists.each do |artist| %>
-        <li><%= link_to artist.stage_name, artist_path(artist) %></li>
+        <div class = "label_artist">
+          <li><%= link_to artist.stage_name, artist_path(artist) %></li>
+        </div>
       <% end %>
       </ul>
     <% end %>
