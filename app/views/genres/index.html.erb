@@ -31,11 +31,11 @@
 	<div class="list">
 		<ul>
 			<% @genres.each do |genre| %>
-			  <li><%= link_to genre.name, genre_path(genre), :artist=>"artist" %></li>
+			  <li><%= link_to genre.name, genre_path(genre), :class=>"artist" %></li>
 			<% end %>
 		</ul>
 
-		<%= link_to 'add new genre', new_genre_path, class: 'new_artist'  %>
+		<p><%= link_to 'add new genre', new_genre_path, class: 'new_artist_link'  %></p>
 	</div>
 
 	<section class="scroll-top-wrapper">
