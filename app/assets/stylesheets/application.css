@@ -1,5 +1,10 @@
 *= require bootstrap.min
 
+/*
+ *= require font-awesome
+ */
+
+
 body {
   background-color: rgb(176, 171, 171) !important;
   margin: 0;
@@ -39,14 +44,29 @@ body {
 
 }
 
-#about_body {
-  background-image: url('/assets/about_background.jpg');
+.about {
+  background: url('/assets/about-background.jpg') no-repeat center fixed;
   background-size: cover;
-  margin-bottom: 23em;
-  height: 100%;
-  margin-top: 9em;
-  opacity: 0.8;
-  filter:alpha(opacity=80);
+}
+
+.about-title {
+  font-family: ubuntu;
+  font-size: 4em;
+  text-align: center;
+  background-color: grey;
+  width: 40%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  margin-top: 2em;
+  margin-bottom: 1.5em;
+}
+
+.irad-about {
+  font-family: ubuntu;
+  font-size: 1em;
+  color: yellow;
+  float: right;
 }
 
 .title {
@@ -109,6 +129,38 @@ body {
   margin-left: .7em;
 }
 
+
+
+.search {
+  margin-top: 2.4em;
+  width: 24em;
+  background: black;
+  border: none;
+  font-family: ubuntu;
+  height: 2em;
+  color: yellow;
+}
+
+.search-button {
+  border: none;
+  color: black;
+  font-family: ubuntu;
+  position: absolute;
+  margin-left: -16em;
+  margin-top: 5.6em;
+  background: yellow;
+  width: 8em;
+}
+
+.search-button:hover {
+  color: yellow;
+  background: rgb(65, 60, 60);
+}
+
+form {
+  text-align: center;
+}
+
 #index_image {
   width: 100%;
   margin-top: 2em;
@@ -142,10 +194,11 @@ body {
 
   width: 22%;
   font-family: ubuntu;
-  font-size: 8em;
+  font-size: 10em;
   text-align: center;
   position: relative;
-  left: -1em;
+  margin-left: auto; 
+  margin-right: auto;
 }
 
 #rad {
@@ -157,8 +210,7 @@ body {
 #irad3 {
   margin-bottom: -10em;
   border-bottom-width: 2em;
-  padding-bottom: .01em;
-  transition: .4s ease-in-out;
+  padding-bottom: 6em;
 
 }
 
@@ -166,15 +218,17 @@ body {
   background-color:rgba(0, 0, 0, 0.5);
 }
 
-.header_ul {
-  color: white !important;
-  font-family: ubuntu;
+.navbar-default {
+  border-bottom: none !important;
 }
+
 
 header ul li a {
   color: white !important;
   margin-right: 1.7em;
-  transition: .4s ease-in-out;
+  transition: .1s ease-in-out;
+  font-weight: 800;
+  font-family: ubuntu;
 }
 
 header ul li a:hover {
@@ -225,7 +279,13 @@ p {
 .artist:hover {
   color: yellow;
   text-decoration: none;
+}
 
+.artist:hover:before {
+  content: "▶";
+  color: yellow;
+  margin-left: -1em;
+  font-size: .6em;
 }
 
 .artist {
@@ -247,12 +307,9 @@ ul a {
 #form {
   border-style: solid;
   border-width: 2px;
-  /*margin-top: 8em;
-  width: 50%;
-  margin-left: 33em;
-  margin-bottom: 1em;*/
 
 }
+
 
 h2 {
   font-family: lato;
@@ -283,6 +340,7 @@ h3 {
   font-size: 1.3em;
   margin-left: 25.3em;
 }
+
 
 .navbar-search {
   margin-top: -4em;
@@ -425,7 +483,7 @@ div ul li {
 
 h4 {
   font-size: 3em;
-  color: grey;
+  color: rgb(65, 60, 60);
   margin-left: 6.5em;
   font-family: ubuntu;
 }
