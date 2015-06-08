@@ -32,3 +32,11 @@ $(document).on( 'scroll', function(){
     $('.scroll-top-wrapper').removeClass('show');
   }
 });
+
+$(document).ready(function() {
+  $('.login').hover(function() {
+    $('.login-icon').addClass('yellow');
+  }, function() {
+    $('.login-icon').removeClass('yellow')
+  });
+});
