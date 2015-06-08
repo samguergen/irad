@@ -7,12 +7,12 @@
         <%= f.text_field :name, class: "form-control", required: true %>
       </div>
     </div>
-    <%= f.label 'founding date', class: "col-sm-2 control-label" %>
+    <%= f.label 'founding date' , class: "col-sm-2 control-label" %>
     <div class = "form-group">
       <%= f.select :founding_date, (Time.zone.now.year - 60)..(Time.zone.now.year) %>
     </div>
     <div class = "form-group">
-      <div class = "col-sm-offset-2 col-sm-8">
+      <div class = "col-sm-offset-2 col-sm-1">
         <%= f.submit %>
       </div>
     </div>
