@@ -36,7 +36,7 @@
 			<% if @artist.avatar.url == "/images/original/missing.png" %>
 				<%= image_tag "blank_avatar.png", id:"profile", alt: "artist avatar", style: "width:20em;height:22em" %>
 			<% else %>
-				<%= image_tag @artist.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
+				<%= image_tag @artist.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "max-height:24em" %>
 			<%end %>
 		</div>
 	</div>

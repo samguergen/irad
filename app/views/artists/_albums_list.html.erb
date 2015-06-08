@@ -1,9 +1,19 @@
 <div class = "container">
-  <h4>Albums</h4>
-  <ul>
-    <% @artist.albums.each do |album| %>
-      <li><%= link_to album.title, artist_album_path(@artist, album) %></li>
-    <% end %>
-  </ul>
-  <%= link_to 'add an album', new_artist_album_path(@artist), :class=>'new_artist_link' %>
+  <h3 id="album-sec-title">Albums</h3>
+  	
+		<p><%= link_to 'add an album', new_artist_album_path(@artist), :class=>'new_artist_link' %></p>
+  	<ul id="albums">
+	    <% @artist.albums.each do |album| %>
+		    	
+	    	<li class="album col-sm-5 col-sm-offset-1" >
+		    	<% if album.avatar.url == "/images/original/missing.png" %>
+		      <%= image_tag "generic_album.png", id:"profile", alt: "artist avatar", style: "width:20em;height:20em" %>
+			    <% else %>
+			      <%= image_tag album.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
+			    <%end %>
+			      <p id="album-title"><%= link_to album.title, artist_album_path(@artist, album) %></p>
+			    <% end %>
+		    </li>
+  		</ul>
+  
 </div>

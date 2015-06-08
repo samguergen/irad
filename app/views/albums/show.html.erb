@@ -1,6 +1,6 @@
 <div id="artist_img">
     <% if @album.avatar.url == "/images/original/missing.png" %>
-      <%= image_tag "generic_album.jpg", id:"profile", alt: "artist avatar", style: "width:20em;height:22em" %>
+      <%= image_tag "generic_album.png", id:"profile", alt: "artist avatar", style: "width:20em;height:22em" %>
     <% else %>
       <%= image_tag @album.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
     <%end %>

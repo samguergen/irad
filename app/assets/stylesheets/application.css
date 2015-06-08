@@ -30,6 +30,8 @@ body {
   width: 50%;
 }
 
+
+
 .artist_top {
   background-image: url('/assets/background4.jpg');
   padding: 1em;
@@ -74,6 +76,8 @@ body {
   font-size: 1em;
   color: yellow;
   float: right;
+  background-color: black;
+  padding: 1em;
 }
 
 .title {
@@ -219,7 +223,7 @@ form {
   margin-bottom: -10em;
   border-bottom-width: 2em;
   padding-bottom: 6em;
-
+  transition-duration: 1s;
 }
 
 #irad3:hover {
@@ -275,6 +279,36 @@ p {
   margin-left: 35em;
 }
 
+#artist-index-title {
+  background: url('/assets/background-7.jpg');
+  height: 100%;
+  background-size: cover;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: -1.5em;
+  background-attachment: fixed, scroll;
+}
+
+#genre-index-title {
+  background: url('/assets/background-3.jpg');
+  height: 100%;
+  background-size: cover;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: -1.5em;
+  background-attachment: fixed, scroll;
+}
+
+#label-index-title {
+  background: url('/assets/background-5.jpg');
+  height: 100%;
+  background-size: cover;
+  padding-top: 1em;
+  padding-bottom: 1em;
+  margin-top: -1.5em;
+  background-attachment: fixed, scroll;
+}
+
 .list {
   color: black;
   font-family: ubuntu;
@@ -282,6 +316,7 @@ p {
   margin-left: 2em;
   transition: .4s ease-in-out;
   text-decoration: none;
+  margin-top: 2em;
 }
 
 .artist:hover {
@@ -486,21 +521,45 @@ div ul li {
   color: rgb(121, 116, 116);
 }
 
-#profile {
-  border-style: solid;
-  border-width: .7em;
-  border-color: gray;
+#album-sec-title {
+  font-family: ubuntu;
+  text-align: center;
 }
 
-#album_section {
-  width: 80%;
-  left: 50%;
-    margin-left: 14.6em;
-    border-style: none;
+.album {
+  display: inline-block;
+  position: relative;
 }
 
 .album_image:hover {
   opacity: .4;
+}
+
+#album-title {
+  text-align: center;
+
+}
+
+#album-title a {
+  color: yellow;
+  background: grey;
+  padding: .4em;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  text-align: center;
+  margin-left: 1em;
+}
+
+#album-title a:hover {
+  color: grey;
+  background: yellow;
+  padding: .4em;
+  text-decoration: none;
+}
+
+
+#albums {
 }
 
 .edit_genre {
