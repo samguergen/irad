@@ -64,6 +64,10 @@ body {
   border: none;
 }
 
+.header_ul {
+  margin-top: .5em;
+}
+
 #logo {
   height: 4em;
   position: relative;
@@ -604,6 +608,43 @@ div ul li {
   text-decoration: none;
 }
 
+#album-title-edit {
+  margin-top: -2em;
+}
+
+#album-title-edit a {
+  color: yellow;
+  background: grey;
+  padding: .4em;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  text-align: center;
+  margin-left: 1em;
+}
+
+#album-title-edit a:hover {
+  color: grey;
+  background: yellow;
+  padding: .4em;
+  text-decoration: none;
+}
+
+.album-edit {
+  position: relative;
+  position: relative;
+  margin-left: 6.7em;
+  font-family: ubuntu;
+  background-color: black;
+  color: grey;
+  padding: .5em;
+  top: .3em;
+}
+
+.album-edit:hover {
+  text-decoration: none;
+  background: yellow;
+}
 
 .albums {
 }
