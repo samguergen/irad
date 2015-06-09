@@ -1,4 +1,15 @@
-<h3>albums</h3>
-<% artist.albums.each do |album| %>
-  <p><%= album.title %> <%= link_to 'edit', edit_artist_album_path(artist, album) %></p>
-<% end %>
+<div class="container">
+	<h3 class="" ="album-sec-title">Albums</h3>
+	<ul class="albums">
+		<% artist.albums.each do |album| %>
+			<li class="album col-sm-5 col-sm-offset-1">
+				<% if album.avatar.url == "/images/original/missing.png" %>
+		      <%= image_tag "generic_album.png", id:"profile", alt: "artist avatar", style: "width:20em;height:20em" %>
+		    <% else %>
+		      <%= image_tag album.avatar.url(:medium) , id: "profile", alt: "artist_avatar", style: "width:20em;height:22em" %>
+		    <%end %>
+			  <p id="album-title"><%= album.title %> <%= link_to 'edit', edit_artist_album_path(artist, album) %></p>
+			<% end %>
+			</li>
+	</ul>
+</div>

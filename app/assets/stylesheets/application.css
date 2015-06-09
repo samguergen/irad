@@ -567,7 +567,7 @@ div ul li {
   color: rgb(121, 116, 116);
 }
 
-#album-sec-title {
+.album-sec-title {
   font-family: ubuntu;
   text-align: center;
 }
@@ -605,7 +605,7 @@ div ul li {
 }
 
 
-#albums {
+.albums {
 }
 
 .edit_genre {
