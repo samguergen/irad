@@ -1,71 +1,44 @@
 
+<body class="about">
+	<header>
+		<nav class="navbar navbar-default navbar-static-top" role="navigation">
+			<div class="banner container-fluid">
+				<div class="navbar-header">
+					<a class='navbar-brand'><%= link_to image_tag("irad_logo.png", :id=>'logo'), controller: 'welcome' %></a>
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
 
-<style>
-
-#logo {
-  margin-bottom: 20px;
-  vertical-align: middle;
-}
-
-.banner container-fluid {
-  height: 50px;
-}
-
-.nav_links {
-/*  margin-top: 50px;*/
-margin-top: -50px;
-}
-
-.navbar-header {
-  margin-top: 10px;
-}
-
-</style>
-
-<section>
-  <header>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="banner container-fluid">
-        <div class="navbar-header">
-          <a href="/" class='navbar-brand'><%= link_to image_tag("irad_logo.png", :id=>'logo') %></a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul id="main-ul"  class="header_ul nav navbar-nav navbar-right">
-            <li class="main_ul"><a href='/about'>About</a></li>
-            <li class="main_ul"><a href='/artists'>Artists</a></li>
-            <li class="main_ul"><a href='/genres'>Genres</a></li>
-            <li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="title">
-    <h1>About</h1>
-  </div>
+				<div class="collapse navbar-collapse navbar-ex1-collapse">
+					<ul class="header_ul nav navbar-nav navbar-right">
+						<% if session[:user_id] %>
+							<li class='main_li top_header login'> <i class="fa fa-user login-icon-name"></i>  <%= link_to current_user.username, user_path(current_user), :class=> 'top_link'  %></li>
+							<li class='main_li top_header'><%= link_to 'Logout', logout_users_path, :class=> 'top_link' %></a></li>
+						<% else %>
+							<li class='main_li top_header login'> <i class="fa fa-user login-icon"></i> <%= link_to 'Log In', login_users_path, :class=> 'top_link' %></li>
+						<%end%>
+						<li><%= link_to "About", welcome_about_path, class: "main_ul" %></li>
+						<li class="main_ul"><a href='/artists'>Artists</a></li>
+						<li class="main_ul"><a href='/genres'>Genres</a></li>
+						<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+	</header>
 
 
-  <div class="list">
+	<div class="about-title">
+	  <h1>What is iRad?</h1>
+	</div>
+		<div class="container">
+		    <p class="irad-about">
+		      iRad is the Internet Recording Artist Database: an experimental online platform made for you by you. As an iRad contributor, you describe music and musical artists not how a promoter, manager or journalist sees them, but as you see them.
+		    </p>
+		 </div>
+</body>
 
-  <p>
-About IRAD:
-** ADD CONTENT HERE **
-</p>
-
-
-  </div>
-
-  <section class="scroll-top-wrapper">
-    <span class="scroll-top-inner">
-      Top
-    </span>
-  </section>
-</section>

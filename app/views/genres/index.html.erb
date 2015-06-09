@@ -25,7 +25,7 @@ margin-top: -50px;
 		<nav class="navbar navbar-default navbar-static-top" role="navigation">
 			<div class="banner container-fluid">
 				<div class="navbar-header">
-					<a href="/" class='navbar-brand'><%= link_to image_tag("irad_logo.png", :id=>'logo') %></a>
+					<a class='navbar-brand'><%= link_to image_tag("irad_logo.png", :id=>'logo'), controller: 'welcome' %></a>
 					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
 						<span class="sr-only">Toggle navigation</span>
 						<span class="icon-bar"></span>
@@ -36,8 +36,14 @@ margin-top: -50px;
 
 				<DIV CLASS="nav_links">
 				<div class="collapse navbar-collapse navbar-ex1-collapse">
-					<ul id="main-ul"  class="header_ul nav navbar-nav navbar-right">
-						<li class="main_ul"><a href='/about'>About</a></li>
+					<ul class="header_ul nav navbar-nav navbar-right">
+						<% if session[:user_id] %>
+							<li class='main_li top_header login'> <i class="fa fa-user login-icon-name"></i>  <%= link_to current_user.username, user_path(current_user), :class=> 'top_link'  %></li>
+							<li class='main_li top_header'><%= link_to 'Logout', logout_users_path, :class=> 'top_link' %></a></li>
+						<% else %>
+							<li class='main_li top_header login'> <i class="fa fa-user login-icon"></i> <%= link_to 'Log In', login_users_path, :class=> 'top_link' %></li>
+						<%end%>
+						<li><%= link_to "About", welcome_about_path, class: "main_ul" %></li>
 						<li class="main_ul"><a href='/artists'>Artists</a></li>
 						<li class="main_ul"><a href='/genres'>Genres</a></li>
 						<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
@@ -48,18 +54,20 @@ margin-top: -50px;
 		</nav>
 	</header>
 
-	<div class="title">
-		<h1>Genres</h1>
+	<div id="genre-index-title">
+		<div class="title">
+			<h1>Genres</h1>
+		</div>
 	</div>
 
 	<div class="list">
 		<ul>
 			<% @genres.each do |genre| %>
-			  <li><%= link_to genre.name, genre_path(genre), :artist=>"artist" %></li>
+			  <li><%= link_to genre.name, genre_path(genre), :class=>"artist" %></li>
 			<% end %>
 		</ul>
 
-		<%= link_to 'add new genre', new_genre_path, class: 'new_artist'  %>
+		<p><%= link_to 'add new genre', new_genre_path, class: 'new_artist_link'  %></p>
 	</div>
 
 	<section class="scroll-top-wrapper">

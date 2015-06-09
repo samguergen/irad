@@ -1,76 +1,47 @@
 
+<header>
+	<nav class="navbar navbar-default navbar-static-top" role="navigation">
+		<div class="banner container-fluid">
+			<div class="navbar-header">
+				<a class='navbar-brand'><%= link_to image_tag("irad_logo.png", :id=>'logo'), controller: 'welcome' %></a>
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+			</div>
 
-<style>
+			<div class="collapse navbar-collapse navbar-ex1-collapse">
+				<ul class="header_ul nav navbar-nav navbar-right">
+					<% if session[:user_id] %>
+						<li class='main_li top_header login'> <i class="fa fa-user login-icon-name"></i>  <%= link_to current_user.username, user_path(current_user), :class=> 'top_link'  %></li>
+						<li class='main_li top_header'><%= link_to 'Logout', logout_users_path, :class=> 'top_link' %></a></li>
+					<% else %>
+						<li class='main_li top_header login'> <i class="fa fa-user login-icon"></i> <%= link_to 'Log In', login_users_path, :class=> 'top_link' %></li>
+					<%end%>
+					<li><%= link_to "About", welcome_about_path, class: "main_ul" %></li>
+					<li class="main_ul"><a href='/artists'>Artists</a></li>
+					<li class="main_ul"><a href='/genres'>Genres</a></li>
+					<li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</header>
 
-#logo {
-  margin-bottom: 20px;
-  vertical-align: middle;
-}
 
-.banner container-fluid {
-  height: 50px;
-}
+<div id="label-index-title">
+	<div class="title">
+	  <h1>Record Labels</h1>
+	</div>
+</div>
 
-.nav_links {
-/*  margin-top: 50px;*/
-margin-top: -50px;
-}
-
-.navbar-header {
-  margin-top: 10px;
-}
-
-.list {
-  margin-left: -750px;
-}
-
-</style>
-
-<section>
-  <header>
-    <nav class="navbar navbar-default navbar-static-top" role="navigation">
-      <div class="banner container-fluid">
-        <div class="navbar-header">
-          <a href="/" class='navbar-brand'><%= link_to image_tag("irad_logo.png", :id=>'logo') %></a>
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-
-        <DIV CLASS="nav_links">
-        <div class="collapse navbar-collapse navbar-ex1-collapse">
-          <ul id="main-ul"  class="header_ul nav navbar-nav navbar-right">
-            <li class="main_ul"><a href='/about'>About</a></li>
-            <li class="main_ul"><a href='/artists'>Artists</a></li>
-            <li class="main_ul"><a href='/genres'>Genres</a></li>
-            <li class="main_ul"><a href='/record_labels'>Record Labels</a></li>
-          </ul>
-        </div>
-      </DIV>
-      </div>
-    </nav>
-  </header>
-
-  <div class="title">
-    <h1>Record Labels</h1>
-  </div>
-
-  <div class="list">
-    <ul>
-      <% @record_labels.each do |label| %>
-        <p><%= link_to label.name, record_label_path(label) %></p>
-      <% end %>
-    </ul>
-
-    <p><a class="new_record_label" href='/record_labels/new'>Add New Record Label</a></p>
-  </div>
-
-  <section class="scroll-top-wrapper">
-    <span class="scroll-top-inner">
-      Top
-    </span>
-  </section>
-</section>
+<div class="list">
+  <ul>
+    <% @record_labels.each do |label| %>
+      <li><%= link_to label.name, record_label_path(label), class: "artist" %></li>
+    <% end %>
+  </ul>
+</div>
+>>>>>>> b4447da9c9ca1eea7f81d93b687dbf92c9b8cfb1

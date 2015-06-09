@@ -1,3 +1,9 @@
+
+
+<div class="edit_title">
+  <h1>Create New Genre</h1>
+</div>
+
 <%= render 'shared/error_messages', target: @genre %>
 <div class="container">
   <%= form_for @genre, html: {class: "form-horizontal"} do |f| %>
@@ -14,7 +20,7 @@
       </div>
     </div>
     <div class = "col-sm-offset-2 col-sm-8">
-      <%= f.submit %>
+      <%= f.submit :class=>'button' %>
     </div>
   <% end %>
 </div>

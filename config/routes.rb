@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :users, only: [:new, :create, :index, :show, :edit, :update]
-  get 'signin', to: 'users#signin', as: :signin
-  get 'signout', to: 'users#signout', as: :signout
+  resources :users do
+    collection do
+      get 'login'
+      post 'new_login'
+      get 'logout'
+    end
+  end
 
   resources :artists do
     resource :artist_genres
@@ -20,5 +24,8 @@ Rails.application.routes.draw do
 
 
   get '/about', :to => 'welcome#about'
+
+  get 'welcome/about'
+
 
 end
