@@ -219,6 +219,19 @@ body {
   background: rgb(65, 60, 60);
 }
 
+#search_but {
+  color: black !important;
+  background: yellow !important;
+  font-family: ubuntu;
+  margin-left: .5em;
+  margin-top: 2.3em;
+}
+
+#search_but:hover {
+  color: yellow !important;
+  background: rgb(65, 60, 60) !important; 
+}
+
 form {
   text-align: center;
 }
