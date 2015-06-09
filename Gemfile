@@ -14,6 +14,7 @@ gem 'ransack'
 gem 'paperclip', '~> 4.2'
 
 gem "font-awesome-rails"
+gem "twitter-bootstrap-rails", github: 'torstenb/twitter-bootstrap-rails'
 
 gem 'capistrano-rails', group: :development
 
