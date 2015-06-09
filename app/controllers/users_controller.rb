@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     @the_user = User.find_by(email: params[:email])
     if @the_user.try(:authenticate, params[:password])
       session[:user_id] = @the_user.id
-      redirect_to questions_path
+      redirect_to "/"
     else
       flash.now[:danger] = "Invalid email/password combination"
       redirect_to login_users_path
