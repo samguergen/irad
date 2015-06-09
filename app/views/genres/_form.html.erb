@@ -14,7 +14,7 @@
       <div class="collapse navbar-collapse navbar-ex1-collapse">
         <ul class="header_ul nav navbar-nav navbar-right">
           <% if session[:user_id] %>
-            <li class='main_li top_header login'> <i class="fa fa-user login-icon"></i>  <%= link_to current_user.username, user_path(current_user), :class=> 'top_link'  %></li>
+            <li class='main_li top_header login'> <i class="fa fa-user login-icon-name"></i>  <%= link_to current_user.username, user_path(current_user), :class=> 'top_link'  %></li>
             <li class='main_li top_header'><%= link_to 'Logout', logout_users_path, :class=> 'top_link' %></a></li>
           <% else %>
             <li class='main_li top_header login'> <i class="fa fa-user login-icon"></i> <%= link_to 'Log In', login_users_path, :class=> 'top_link' %></li>
@@ -28,6 +28,7 @@
     </div>
   </nav>
 </header>
+
 
 
 <div class="edit_title">
